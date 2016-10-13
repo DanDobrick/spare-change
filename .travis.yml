@@ -1,4 +1,5 @@
 language: ruby
+before_install: rvm install 2.2.4 && rvm user 2.2.4
 services:
 - postgresql
 before_script:
