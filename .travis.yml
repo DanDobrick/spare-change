@@ -1,12 +1,12 @@
 language: ruby
-rvm:
-  - 2.0.0
-env:
-  - DB=postgresql
-script:
-  - bundle exec rake spec
+services:
+- postgresql
 before_script:
-  - bundle exec rake db:create RAILS_ENV=test
-  - bundle exec rake db:migrate
-  - bundle exec rake db:test:prepare
-bundler_args: --binstubs=./bundler_stubs
+- psql -c 'create database travis_ci_test;' -U postgresql
+- cp config/database.yml.travis config/database.yml
+after_install: bundle exec rake db:setup
+deploy:
+  provider: heroku
+  api_key:
+    secure: I1biVl4JhVjWz13S8/qia5/yIzHHyuf/RdNLtFY8rbwRbGps5XrdKZWLfU/OdQOhf8STKMx01oNtVP5Lj1DbRN4jWGywPEm6J/0egQ/3Uddy3V2mF+fquK5k+UZ1U+k18COqduhlNesSvXlqEy7qjwL5fFlCv2V1VNSxb5Hm48BPvDNw7URoF+PL1sKl9a6LkFT4o3xzPBjzOAsXxiSMPNLipVsk0mVubzp1cdzPMdoRu0rQSZV4dR3763LUU7f76eFp8vdx5snqnkVrsBZ2uc/iP5bt5OF4oz1ahm1Cf/nKY+ExS/VJbFQGhglTijjmWArn/7uMFf3M+yJZntko5hEnYDcu29mxx4JOCPhg8bd6OZetSvT0GOl6DUwB/gUMRVv0WpFrDoOfjodfVrSakEb9K+/09cy5ZFHZ0U4Ir+6oMZMgzCaCkdC+jM697gewCaraLIp/0xPdUqW5m8ohVusO7vqzXlY+rCziydJkZNrQqtZom2CEft3jtqipyL4nKJI5AzFI8syRIzCTDb9RBKhS+dGQBFCKFoczgOD/NkTNr9UOxYCHHNcxM7iKgk3PHGVZU7ifvir0/61DuVhvZ2sIla6xkcjp2HAolXmeszTjHDhQ7c7q2O87Kt7i74jetGrHygxnA1FEp2JNEzoExueVHfnVgMWMf778LmONdCs=
+    app: spare-change
