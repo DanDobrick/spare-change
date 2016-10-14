@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       # render "../../public/404", layout: false
       redirect_to new_session_path
     else
+      render :show
     end
   end
 
