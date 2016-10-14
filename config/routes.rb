@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-   root "donors#show"
+   root "plaid#create"
   # resources :users, only: [:new, :create, :show] do
   #   member do
   #     post "plaid" => "plaid#create"
