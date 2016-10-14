@@ -6,3 +6,10 @@ before_script:
 - psql -c 'create database travis_ci_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
 after_install: bundle exec rake db:setup
+deploy:
+  provider: heroku
+  api_key:
+    secure: WL18xbHJ8Ob9AxhgFSi4+8RvQ9dA36oj7dRfkfkEDvnUb/UaNAJDvlmmlSUowfs0leQxrLqixQPOIwnt9k3f/MoA6T6ikXP+oADwPPX1cN9r8XD+menL+ovUSFqdcODpodadXh9W4edEpZS0fdhQkdjB5I0aeSVZyfPubFBaP4XIrpoNBUA9iBNOmdLEe3friqUsSratUAko+l7fmdkFzprG0Tw0peJIPWAtTY2yHXqPO1orEDVk1ccpQvhrKffZvr/emvHZIG9C9uQ8OemjtP/bucBtLBSUgcAi4mi5l2EnlyfSYXC87D4TH9CAwOkyM87TpQsKmX+opLpkuDN5Pk3uSVsXEyTlkOYKCFV8S1oQZRZylMwKEGA01QUnupDJ3VxzvFvFA1FZhPKOKG6/KmzXe6DzbQ4UTLYpSCwq/r5CJzg8mkm31T42puS63MzKebTd4Uwf1CFjghjXMAwcXLPosOWzDM68r9cwbzEd3MJsVvFdpD5sE99bgEarpVkp7VmRt18feJup3VwaHfMWMFnVojDod82JVN+w0hIydi1GKh5DjSjUI7CB1cBKgXTWz5jmmmXku/C+W3aeq2aP12Mhpd5vG7KwBlJ1oDxYZN6WXkpqmBcEbzVVR/uzMJPCAo4YKY/aJ0eKQhu6YQFxjm73kbC5g2JvyjUoiHIgazs=
+  app: spare-change
+  on:
+    repo: DanDobrick/spare-change
