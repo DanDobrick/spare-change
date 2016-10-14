@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # root to: ""
+  devise_for :users
+   root "donors#show"
   # resources :users, only: [:new, :create, :show] do
   #   member do
   #     post "plaid" => "plaid#create"
