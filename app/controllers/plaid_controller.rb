@@ -14,6 +14,5 @@ class PlaidController < ApplicationController
     current_user.plaid_id = access_token
     current_user.stripe_account = stripe_user.id
     current_user.save
-    binding.pry
   end
 end
