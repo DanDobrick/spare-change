@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20161014163728) do
   create_table "donors", force: :cascade do |t|
     t.string   "first_name",                    null: false
     t.string   "last_name",                     null: false
-    t.integer  "devise_user",                   null: false
+    t.integer  "devise_id",                     null: false
     t.string   "plaid_id"
     t.string   "stripe_account"
     t.decimal  "bucket",          default: 0.0, null: false
