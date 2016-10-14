@@ -4,25 +4,25 @@
   <%= render '/errors' %>
 <% end %>
 
-<%= form_tag(users_path, method: "post") do %>
+<%= form_for @user do |f| %>
   <p>
-    <%= label_tag(:first_name, "First Name") %>
-    <%= text_field_tag(:first_name)%>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name%>
   </p>
   <p>
-    <%= label_tag(:last_name, "Last Name") %>
-    <%= text_field_tag(:last_name)%>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name%>
   </p>
   <p>
-    <%= label_tag(:email, "Email") %>
-    <%= text_field_tag :email %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </p>
   <p>
-    <%= label_tag :password, "Password" %>
-    <%= password_field_tag :password %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
   </p>
 
   <p>
-    <%= submit_tag("Submit") %>
+    <%= f.submit %>
   </p>
 <% end %>
