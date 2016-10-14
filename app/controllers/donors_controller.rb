@@ -1,4 +1,6 @@
 class DonorsController < ApplicationController
-  def home
+
+  def show
   end
+
 end
