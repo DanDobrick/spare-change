@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     if !logged_in? || @user.id != session[:user_id]
       render "../../public/404", layout: false
     else
+      render :show
     end
   end
 
