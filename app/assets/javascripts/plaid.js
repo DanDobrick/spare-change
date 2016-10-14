@@ -1,4 +1,5 @@
-var linkHandler = Plaid.create({
+$(function(){
+  var linkHandler = Plaid.create({
   selectAccount: true,
   env: 'tartan',
   clientName: 'spareCHANGE',
@@ -11,7 +12,7 @@ var linkHandler = Plaid.create({
   },
   onSuccess: function(public_token, metadata) {
     $.ajax({
-      url: '/INSERT URL HERE',
+      url: '/users/plaid',
       method: 'POST',
       data: {public_token: public_token, metadata: metadata}
     }).done(function(response){
@@ -19,10 +20,12 @@ var linkHandler = Plaid.create({
     })
   },
   onExit: function() {
-    // The user exited the Link flow.
+    console.log('exited')
   }
 });
 
-document.getElementById('linkButton').onclick = function() {
-  linkHandler.open();
-};
+
+  document.getElementById('linkButton').onclick = function() {
+    linkHandler.open();
+  };
+});
