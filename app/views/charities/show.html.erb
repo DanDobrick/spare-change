@@ -1,0 +1,14 @@
+
+    <%= @charity['charityName'] %>
+
+  <% if @charity['website'] != "" %>
+    <p><a href="http://<%= @charity['website'] %>"><%= @charity['website'] %></a>
+  <% else %>
+    <p>Website: Information Not Provided</p>
+  <% end %>
+
+  <% if @charity['missionStatement'] != "" %>
+    <p> <%= @charity['missionStatement']%></p>
+  <% else %>
+    <p>Mission Statement: Information Not Provided</p>
+  <% end %>
