@@ -42,11 +42,6 @@ describe User do
       expect(user.valid?).to eq false
     end
 
-    it "requires a password of at least 8 characters" do
-      user = User.create(first_name: "Joe", last_name: "Smith", email: "Joe@yahoo.com", password: "eight")
-      expect(user.valid?).to eq false
-    end
-
     it "requires emails to be unique" do
       user = User.create(first_name: "Joe", last_name: "Smith", email: "Joe@yahoo.com", password: "password")
       user = User.create(first_name: "Joe", last_name: "Smith", email: "Joe@yahoo.com", password: "password")
