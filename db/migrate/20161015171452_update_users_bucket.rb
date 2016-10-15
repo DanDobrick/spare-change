@@ -1,6 +1,6 @@
 class UpdateUsersBucket < ActiveRecord::Migration
   def up
-    remove_column :last_purchase
+    remove_column :users, :last_purchase
   end
 
   def change

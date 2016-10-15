@@ -16,46 +16,29 @@ ActiveRecord::Schema.define(version: 20161015171452) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "charities", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.string   "bank_info",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "donations", force: :cascade do |t|
-    t.integer  "user_id",             null: false
-    t.integer  "current_charity_ein", null: false
-    t.decimal  "user_bucket",         null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  create_table "purchases", force: :cascade do |t|
-    t.integer  "donor_id",   null: false
-    t.decimal  "amount",     null: false
-    t.string   "merchant",   null: false
-    t.datetime "date",       null: false
-    t.boolean  "pending?",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",                                      null: false
+    t.string   "current_charity_ein",                          null: false
+    t.decimal  "user_bucket",         precision: 10, scale: 2, null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                              null: false
-    t.string   "password_digest",                    null: false
-    t.string   "first_name",                         null: false
-    t.string   "last_name",                          null: false
+    t.string   "email",                                                       null: false
+    t.string   "password_digest",                                             null: false
+    t.string   "first_name",                                                  null: false
+    t.string   "last_name",                                                   null: false
     t.string   "plaid_id"
     t.string   "stripe_account"
-    t.decimal  "bucket",               default: 0.0, null: false
+    t.decimal  "bucket",               precision: 10, scale: 2, default: 0.0, null: false
     t.string   "current_charity_ein"
     t.string   "current_charity_name"
     t.string   "last_purchase"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                                                  null: false
+    t.datetime "updated_at",                                                  null: false
     t.string   "account_id"
-    t.string   "rounded_transactions", default: [],               array: true
+    t.string   "rounded_transactions",                          default: [],               array: true
   end
 
 end
