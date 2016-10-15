@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   post 'charities/search/:keyword', to: 'charities#search', :as => "charities_search"
 
+  put 'users/charity/update', to: 'users#charity_update'
 
 end
