@@ -9,5 +9,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :charities, only: [:index]
+
+  post 'charities/search/:keyword', to: 'charities#search', :as => "charities_search"
+
 
 end

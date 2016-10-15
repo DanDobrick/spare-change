@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20161015171452) do
   end
 
   create_table "donations", force: :cascade do |t|
-    t.integer  "donor_id",    null: false
-    t.integer  "charity_id",  null: false
-    t.decimal  "user_bucket", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "user_id",             null: false
+    t.integer  "current_charity_ein", null: false
+    t.decimal  "user_bucket",         null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "purchases", force: :cascade do |t|
