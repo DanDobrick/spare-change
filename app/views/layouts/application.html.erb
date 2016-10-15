@@ -8,11 +8,15 @@
 </head>
 <body>
 <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
-<%= yield %>
 <nav>
     <div id="logo"></div>
     <!-- <img src="<%= asset_path( 'Logomakr_7EW1mV.png' ) %>" style="width:150px;height:100px;" alt="logo" /> -->
-    <% if logged_in? %>
+  <% if logged_in? %>
+    <%= form_tag(charities_path, method: "get") do %>
+      <%= label_tag(:q, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    <% end %>
       <%= link_to current_user.first_name, user_path(current_user), :method => :get %>
       <%= link_to "logout", session_path(session[:user_id]), :method => :delete %>
     <% else %>
@@ -20,6 +24,7 @@
       <%= link_to "login", new_session_path, :method => :get %>
     <% end %>
   </nav>
+  <%= yield %>
 
 </body>
 </html>
