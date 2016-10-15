@@ -1,0 +1,9 @@
+ #nav-ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.nav-list {
+  display: inline;
+}

@@ -8,18 +8,21 @@
 </head>
 <body>
 <script src="https://cdn.plaid.com/link/stable/link-initialize.js"></script>
-<%= yield %>
 <nav>
     <div id="logo"></div>
     <!-- <img src="<%= asset_path( 'Logomakr_7EW1mV.png' ) %>" style="width:150px;height:100px;" alt="logo" /> -->
-    <% if logged_in? %>
-      <%= link_to current_user.first_name, user_path(current_user), :method => :get %>
-      <%= link_to "logout", session_path(session[:user_id]), :method => :delete %>
-    <% else %>
-      <%= link_to "register", new_user_path, :method => :get %>
-      <%= link_to "login", new_session_path, :method => :get %>
-    <% end %>
-  </nav>
+  <ul id='nav-ul'>
+      <% if logged_in? %>
+        <li class='nav-list'><%= link_to current_user.first_name, user_path(current_user), :method => :get %></li>
+        <li class='nav-list'><%= link_to "logout", session_path(session[:user_id]), :method => :delete %></li>
+      <% else %>
+        <li class='nav-list'><%= link_to "register", new_user_path, :method => :get %></li>
+        <li class='nav-list'><%= link_to "login", new_session_path, :method => :get %></li>
+      <% end %>
+      <li class='nav-list'><%= render '/charities/search' %></li>
+  </ul>
+</nav>
+<%= yield %>
 
 </body>
 </html>
