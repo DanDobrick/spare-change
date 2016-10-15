@@ -9,7 +9,6 @@ module ApplicationHelper
   end
 
   def guidestar_ein(charity_ein)
-    # ein_number = charity_ein.to_i
     charity_ein.insert(2, '-')
   end
 end
