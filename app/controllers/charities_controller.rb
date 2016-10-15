@@ -22,8 +22,6 @@ class CharitiesController < ApplicationController
       uri = URI.parse(encoded_url)
       response = HTTParty.get('http://'"#{encoded_url}")
       @charity = response['data'][0]
-      p "*" * 100
-      p @charity['charityName']
   end
 
 end
