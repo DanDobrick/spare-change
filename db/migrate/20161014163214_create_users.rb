@@ -1,3 +1,4 @@
+
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
@@ -8,7 +9,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :plaid_id
       t.string :stripe_account
       t.decimal :bucket, null: false, :default => 0.0
-      t.string :current_charity
+      t.string :current_charity_ein
+      t.string :current_charity_name
+      t.string :rounded_transactions, array: true, default []
 
       t.timestamps null: false
     end

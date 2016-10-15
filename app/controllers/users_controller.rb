@@ -19,13 +19,14 @@ class UsersController < ApplicationController
 
 
   def show
-
     @user = User.find_by(id: current_user.try(:id))
 
     if !logged_in? || @user.id != session[:user_id]
       # render "../../public/404", layout: false
       redirect_to new_session_path
     else
+      @user.update_bucket
+      # binding.pry
       render :show
     end
   end

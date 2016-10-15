@@ -1,3 +1,8 @@
 <h1>:)</h1>
 
 <button id="linkButton">Connect Your Bank Account</button>
+<hr>
+<h1>Transactions This Month</h1>
+<% @transactions.each do |t| %>
+  On <%= t.date %> <%= current_user.first_name %> spent <%= t.amount %> at <%= t.name %><br>
+<% end %>
