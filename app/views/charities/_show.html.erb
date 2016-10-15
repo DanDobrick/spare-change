@@ -1,9 +1,9 @@
 <ul id="charities-list">
-  <% charities.each do |charity| %>
+  <% @charities.each do |charity| %>
     <li>
-      <p> <%= charity.charityName %> </p>
-      <p> <%= charity.website %> </p>
-      <p> <%= charity.missionStatement %> </p>
+      <p> <%= charity['charityName'] %> </p>
+      <p> <%= charity['website'] %> </p>
+      <p> <%= charity['missionStatement'] %> </p>
     </li>
   <% end %>
 </ul>

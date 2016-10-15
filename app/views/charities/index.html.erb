@@ -1,6 +1,5 @@
 
-
-<%= form_tag(users_path, method: "post") do %>
+<%= form_tag(charities_path, method: "get") do %>
   <%= label_tag(:q, "Search for:") %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search", :name => nil %>
@@ -8,7 +7,7 @@
 
   <div id="charities-container">
       <% if @charities %>
-        <%= render partial: "/charities/_show", locals: {charities: @charities} %>
+      <%= render partial: "show", locals: {charities: @charities} %>
       <% end %>
     </ul>
   </div>
