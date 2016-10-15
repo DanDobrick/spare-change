@@ -1,16 +1,28 @@
-<h1>:)</h1>
+<h1>Welcome <%= current_user.first_name %>!</h1>
 
-<button id="linkButton">Connect Your Bank Account</button>
-<hr>
-<h1>Transactions This Month</h1>
-<% if current_user.transactions %>
-  You would be donating: $<%= @user.bucket %>
-<% end %><br><br>
+<% if !current_user.plaid_id %>
+  <h3>Connect Your Bank Account</h3>
+  <button id="linkButton">Connect Your Bank Account</button>
+<% else %>
+  <%= current_user.first_name %> has already connected an account.
+<% end %>
 
-<div class="charity-search-form">
-  <%= form_tag(charities_path, method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
+<h3><%= current_user.first_name %>'s Transactions This Month</h3>
+  <% if current_user.transactions %>
+    <p>Thanks, <%= current_user.first_name %>! You will be donating: $<%= @user.bucket %> to <%= current_user.current_charity_name || 'somewhere great...' %></p>
   <% end %>
-</div>
+
+<h3><%= current_user.first_name %>'s Charity Choice</h3>
+  <% if current_user.current_charity_name %>
+    <p><%= current_user.first_name %>'s Current Charity is: <%= current_user.current_charity_name %></p>
+  <% else %>
+    <p><%= current_user.first_name %> does not have a charity selected.</p>
+  <% end %>
+
+  <div class="charity-search-form">
+    <%= form_tag(charities_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
