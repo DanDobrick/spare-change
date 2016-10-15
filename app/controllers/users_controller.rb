@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def charity_update
     @user = User.find_by(id: current_user.try(:id))
     @user.current_charity_ein = params[:id]
-    @user.current_charity_name = params[:charity_name].capitalize
+    @user.current_charity_name = params[:charity_name].titleize
     @user.save
 
     redirect_to user_path(@user)
