@@ -12,6 +12,8 @@ class CharitiesController < ApplicationController
       uri = URI.parse(encoded_url)
       response = HTTParty.get('http://'"#{encoded_url}")
       @charities = response['data']
+      p 'hello'
+      p @charities
     end
   end
 

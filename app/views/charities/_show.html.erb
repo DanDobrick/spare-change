@@ -1,19 +1,23 @@
 <ul id="charities-list">
-  <% @charities.each do |charity| %>
-    <li>
-      <%= link_to charity['charityName'], charity_path(charity['ein']), :method => :get %>
+  <% if @charities != [] %>
+    <% @charities.each do |charity| %>
+      <li>
+        <%= link_to charity['charityName'], charity_path(charity['ein']), :method => :get %>
 
-      <% if charity['website'] != "" %>
-        <p><a href="http://<%= charity['website'] %>"><%= charity['website'] %></a>
-      <% else %>
-        <p>Website: Information Not Provided</p>
-      <% end %>
+        <% if charity['website'] != "" %>
+          <p><a href="http://<%= charity['website'] %>"><%= charity['website'] %></a>
+        <% else %>
+          <p>Website: Information Not Provided</p>
+        <% end %>
 
-      <% if charity['missionStatement'] != "" %>
-        <p> <%= charity['missionStatement']%></p>
-      <% else %>
-        <p>Mission Statement: Information Not Provided</p>
+        <% if charity['missionStatement'] != "" %>
+          <p> <%= charity['missionStatement']%></p>
+        <% else %>
+          <p>Mission Statement: Information Not Provided</p>
+        <% end %>
       <% end %>
-    </li>
-  <% end %>
+    <% else %>
+      <p>Sorry, charity not found.</p>
+    <% end %>
+  </li>
 </ul>
