@@ -1,8 +1,20 @@
 <h1>:)</h1>
 
-<button id="linkButton">Connect Your Bank Account</button>
-<hr>
+
 <h1>Transactions This Month</h1>
-<% if current_user.transactions %>
-  You would be donating: $<%= @user.bucket %>
-<% end %>
+
+  <% if current_user.transactions %>
+    <p>You would be donating: $<%= @user.bucket %></p>
+  <% end %><br>
+
+<button id="linkButton">Connect Your Bank Account</button>
+
+  <% if current_user.current_charity_name %>
+    <p><%= current_user.first_name %>'s Current Charity is: <%= current_user.current_charity_name %></p>
+  <% else %>
+    <p><%= current_user.first_name %> does not have a charity selected.</p>
+  <% end %>
+
+
+
+
