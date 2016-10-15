@@ -1,14 +1,14 @@
-<h1>:)</h1>
+<h1>Welcome <%= current_user.first_name %>!</h1>
 
-
-<h1>Transactions This Month</h1>
-
+<h3>Transactions This Month</h3>
   <% if current_user.transactions %>
     <p>You would be donating: $<%= @user.bucket %></p>
-  <% end %><br>
+  <% end %>
 
+<h3>Connect Your Bank Account</h3>
 <button id="linkButton">Connect Your Bank Account</button>
 
+<h3><%= current_user.first_name %>'s Charity Choice</h3>
   <% if current_user.current_charity_name %>
     <p><%= current_user.first_name %>'s Current Charity is: <%= current_user.current_charity_name %></p>
   <% else %>
