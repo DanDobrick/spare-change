@@ -1,0 +1,11 @@
+<h1>spareChange</h1>
+
+<blockquote>
+  Mission statementy stuff
+</blockquote>
+
+<% if !current_user %>
+  <%= link_to 'Join Now!', new_user_path %>
+<% end %>
+
+<h2>Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h2>
