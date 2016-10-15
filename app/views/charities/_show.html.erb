@@ -3,6 +3,10 @@
     <% @charities.each do |charity| %>
       <li>
         <%= link_to charity['charityName'], charity_path(charity['ein']), :method => :get %>
+        <%= form_tag(users_charity_update_path, method: "put") do %>
+          <%= hidden_field_tag "charity_name", charity['charityName'] %>
+          <%= submit_tag("Make this My Charity") %>
+        <% end %>
         <p><a href="http://<%= charity['website'] %>"><%= charity['website'] %></a>
         <p> <%= charity['missionStatement']%></p>
     <% end %>
