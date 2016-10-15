@@ -1,3 +1,8 @@
 <h1>:)</h1>
 
 <button id="linkButton">Connect Your Bank Account</button>
+<hr>
+<h1>Transactions This Month</h1>
+<% if current_user.transactions %>
+  You would be donating: $<%= @user.bucket %>
+<% end %>
