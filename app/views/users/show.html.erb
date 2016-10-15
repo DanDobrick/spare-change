@@ -1,12 +1,16 @@
 <h1>Welcome <%= current_user.first_name %>!</h1>
 
-<h3>Transactions This Month</h3>
-  <% if current_user.transactions %>
-    <p>You would be donating: $<%= @user.bucket %></p>
-  <% end %>
+<% if !current_user.plaid_id %>
+  <h3>Connect Your Bank Account</h3>
+  <button id="linkButton">Connect Your Bank Account</button>
+<% else %>
+  <%= current_user.first_name %> has already connected an account.
+<% end %>
 
-<h3>Connect Your Bank Account</h3>
-<button id="linkButton">Connect Your Bank Account</button>
+<h3><%= current_user.first_name %>'s Transactions This Month</h3>
+  <% if current_user.transactions %>
+    <p>Thanks, <%= current_user.first_name %>! You will be donating: $<%= @user.bucket %> to <%= current_user.current_charity_name || 'somewhere great...' %></p>
+  <% end %>
 
 <h3><%= current_user.first_name %>'s Charity Choice</h3>
   <% if current_user.current_charity_name %>
