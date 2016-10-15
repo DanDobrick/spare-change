@@ -18,3 +18,5 @@
   <%= hidden_field_tag "charity_name", @charity['charityName'] %>
   <%= submit_tag("Make this My Charity") %>
 <% end %>
+
+<p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>">GuideStar Rating</a>
