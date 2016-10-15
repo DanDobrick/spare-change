@@ -19,6 +19,10 @@
     <p><%= current_user.first_name %> does not have a charity selected.</p>
   <% end %>
 
-
-
-
+  <div class="charity-search-form">
+    <%= form_tag(charities_path, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    <% end %>
+  </div>
