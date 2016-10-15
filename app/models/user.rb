@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def full_name
+    self.first_name + ' ' + self.last_name
+  end
+
   def update_bucket
     self.transactions.each do |transaction|
       unless self.rounded_transactions.include?(transaction.id)

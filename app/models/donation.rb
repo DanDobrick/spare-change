@@ -5,10 +5,13 @@ class Donation < ActiveRecord::Base
     payment_hash = { amount: (self.user_bucket * 100).to_i, 
                     currency: 'usd', 
                     customer: self.user.stripe_account, 
-                    description: "Thank you for donating to #{self.user.current_charity_name}", 
+                    description: "Thank you for donating to #{self.user.current_charity_name}!", 
                     metadata:{
-                      'charity EIN' => self.user.current_charity_ein, 
-                      'charity name' => self.user.current_charity_name}, 
+                      'Charity EIN' => self.user.current_charity_ein, 
+                      'Charity name' => self.user.current_charity_name,
+                      'Donor full name' => self.user.full_name,
+                      'Donor email' => self.user.email
+                             }, 
                     receipt_email: self.user.email
                    }
     Stripe::Charge.create(payment_hash)
