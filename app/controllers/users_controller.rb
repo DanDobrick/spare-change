@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    #@user = User.new(password: params[:password], email: params[:email], first_name: params[:first_name], last_name: params[:last_name])
 
     if @user.save
       session[:user_id] = @user.id
@@ -19,11 +18,13 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find_by(id: current_user.try(:id))
+
     if !logged_in? || @user.id != session[:user_id]
       # render "../../public/404", layout: false
       redirect_to new_session_path
     else
+      @user.update_bucket
       render :show
     end
   end
