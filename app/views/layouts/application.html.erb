@@ -12,6 +12,7 @@
     <div id="logo"></div>
     <!-- <img src="<%= asset_path( 'Logomakr_7EW1mV.png' ) %>" style="width:150px;height:100px;" alt="logo" /> -->
   <ul id='nav-ul'>
+      <li><%= link_to 'Home', root_path %></li>
       <% if logged_in? %>
         <li class='nav-list'><%= link_to current_user.first_name, user_path(current_user), :method => :get %></li>
         <li class='nav-list'><%= link_to "logout", session_path(session[:user_id]), :method => :delete %></li>
