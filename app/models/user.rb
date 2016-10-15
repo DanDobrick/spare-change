@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :donations
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
@@ -13,6 +14,10 @@ class User < ActiveRecord::Base
     else
       return []
     end
+  end
+
+  def full_name
+    self.first_name + ' ' + self.last_name
   end
 
   def update_bucket
@@ -32,5 +37,15 @@ class User < ActiveRecord::Base
     self.rounded_transactions = [] if end_of_month
     self.save
     return total
+  end
+
+  def account_balance
+    if self.plaid_id
+      plaid_user = Plaid::User.load(:connect, self.plaid_id)
+      accounts = plaid_user.balance
+      accounts.each do |account|
+        return account.current_balance if account.id == self.account_id
+      end
+    end
   end
 end
