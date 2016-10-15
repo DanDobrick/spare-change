@@ -26,19 +26,69 @@ describe User do
     end
   end
 
+  describe "Methods" do
+    describe 'When there is no plaid_id yet' do
+      it 'has an empty set of transactions' do
+        no_plaid = User.new(email: 'test@test.org', password: 'password', first_name: 'Dan', last_name: 'Park')
+        expect(no_plaid.transactions).to eq([])
+      end
+      it 'User#update_bucket doesn\'t change the bucket amount' do
+        no_plaid = User.new(email: 'test@test.org', password: 'password', first_name: 'Dan', last_name: 'Park')
+        expect{no_plaid.update_bucket}.to_not change(no_plaid, :bucket).from(0)
+      end
+    end
+
+    describe "When plaid id is set" do
+      it 'has a set of transcactions' do
+        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+        expect(billy.transactions).to_not be([])
+      end
+      it 'User#update_bucket updates the bucket amount' do
+        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+        expect{billy.update_bucket}.to change(billy, :bucket)
+      end
+    end
+
+    describe 'User#empty_bucket(end_of_month)' do
+      describe 'when end_of_month is true or not passed in' do
+        it 'it empties bucket and resets transactions' do
+          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+
+          billy.update_bucket
+          expect(billy.bucket).to_not eq(0)
+          billy.empty_bucket
+          expect(billy.bucket).to eq(0)
+          expect(billy.rounded_transactions).to eq([])
+        end
+      end
+
+      describe 'when end_of_month is false' do
+        it 'it empties bucket and DOES NOT reset transactions' do
+          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+
+          billy.update_bucket
+          expect(billy.bucket).to_not eq(0)
+          billy.empty_bucket(false)
+          expect(billy.bucket).to eq(0)
+          expect(billy.rounded_transactions).to_not eq([])
+        end
+      end
+    end
+  end
+
   describe "validations" do
     it "is invalid without a first_name" do
-      user = User.create(last_name: "Smith", email: "joe@yahoo.com", password: "password")
+      user = User.new(last_name: "Smith", email: "joe@yahoo.com", password: "password")
       expect(user.valid?).to eq false
     end
 
    it "is invalid without a last_name" do
-      user = User.create(first_name: "Joe", email: "joe@yahoo.com", password: "password")
+      user = User.new(first_name: "Joe", email: "joe@yahoo.com", password: "password")
       expect(user.valid?).to eq false
     end
 
     it "is invalid without an email" do
-      user = User.create(first_name: "Joe", last_name: "Smith",password: "password")
+      user = User.new(first_name: "Joe", last_name: "Smith",password: "password")
       expect(user.valid?).to eq false
     end
 
