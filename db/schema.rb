@@ -42,16 +42,18 @@ ActiveRecord::Schema.define(version: 20161014163728) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                         null: false
-    t.string   "password_digest",               null: false
-    t.string   "first_name",                    null: false
-    t.string   "last_name",                     null: false
+    t.string   "email",                              null: false
+    t.string   "password_digest",                    null: false
+    t.string   "first_name",                         null: false
+    t.string   "last_name",                          null: false
     t.string   "plaid_id"
     t.string   "stripe_account"
-    t.decimal  "bucket",          default: 0.0, null: false
-    t.string   "current_charity"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.decimal  "bucket",               default: 0.0, null: false
+    t.string   "current_charity_ein"
+    t.string   "current_charity_name"
+    t.string   "rounded_transactions", default: [],               array: true
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
 end

@@ -5,8 +5,12 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   def transactions
-    plaid_user = Plaid::User.load(:connect, self.plaid_id)
-    transactions = plaid_user.transactions(start_date: Date.today.at_beginning_of_month, end_date: Date.today)
+    if self.plaid_id
+      plaid_user = Plaid::User.load(:connect, self.plaid_id)
+      return transactions = plaid_user.transactions(start_date: Date.today.at_beginning_of_month, end_date: Date.today)
+    else
+      return []
+    end
   end
 
   def update_bucket
@@ -25,5 +29,6 @@ class User < ActiveRecord::Base
     self.bucket = 0
     self.rounded_transactions = [] if end_of_month
     self.save
+    return total
   end
 end
