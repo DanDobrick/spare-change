@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :donations
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
@@ -9,6 +10,7 @@ class User < ActiveRecord::Base
       plaid_user = Plaid::User.load(:connect, self.plaid_id)
       all_transactions = plaid_user.transactions(start_date: Date.today.at_beginning_of_month, end_date: Date.today)
       transactions = all_transactions.map{|transaction| transaction if self.account_id == transaction.account_id}
+      binding.pry
       return transactions.compact
     else
       return []
@@ -32,5 +34,15 @@ class User < ActiveRecord::Base
     self.rounded_transactions = [] if end_of_month
     self.save
     return total
+  end
+
+  def account_balance
+    if self.plaid_id
+      plaid_user = Plaid::User.load(:connect, self.plaid_id)
+      accounts = plaid_user.balance
+      accounts.each do |account|
+        return account.current_balance if account.id == self.account_id
+      end
+    end
   end
 end
