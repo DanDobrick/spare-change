@@ -8,7 +8,6 @@ $(function(){
     product: 'auth',
     longtail: true,
     onLoad: function(){
-      // The Link module finished loading.
     },
     onSuccess: function(public_token, metadata) {
       $.ajax({
@@ -20,7 +19,7 @@ $(function(){
       })
     },
     onExit: function() {
-      console.log('exited')
+      location.reload();
     }
   });
 
