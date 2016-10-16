@@ -48,4 +48,15 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def stop_donation
+    ein = self.current_charity_ein
+    unprocessed_donations = self.donations.where(current_charity_ein: ein, pending: true)
+    unprocessed_donations.destroy_all
+    self.plaid_id = nil
+    self.current_charity_ein = nil
+    self.current_charity_name = nil
+    self.bucket = 0.0
+    self.save
+  end
 end

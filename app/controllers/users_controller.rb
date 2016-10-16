@@ -43,9 +43,16 @@ class UsersController < ApplicationController
   # this is a custom update just to update the charity. so in future if we are updating user information, it can be completely separate from the update method.
   def charity_update
     @user = User.find_by(id: current_user.try(:id))
-    @user.current_charity_ein = params[:id]
+    @user.current_charity_ein = params[:charity_ein]
     @user.current_charity_name = params[:charity_name].capitalize
     @user.save
+
+    redirect_to user_path(@user)
+  end
+
+  def charity_pause
+    @user = User.find_by(id: current_user.try(:id))
+    @user.stop_donation
 
     redirect_to user_path(@user)
   end
