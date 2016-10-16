@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
 
   def index
     this_month_donations = Donation.where('updated_at > ?', Date.today.at_beginning_of_month)
-    top_five_hash =  Donation.group(:current_charity_ein).sum(:user_bucket).first(5)
+    top_five_array =  Donation.group(:current_charity_ein).sum(:user_bucket).first(5)
     eins = top_five_hash.map{|ein_sum_pair| ein_sum_pair[0]}
     @top_five = []
-    eins.each do |ein|
-      url = "data.orghunter.com/v1/charitysearch?user_key=#{ENV['CHARITY_TOKEN']}&ein=#{ein}"
+    top_five_array.each do |top|
+      url = "data.orghunter.com/v1/charitysearch?user_key=#{ENV['CHARITY_TOKEN']}&ein=#{top[0]}"
       encoded_url = URI.encode(url)
       uri = URI.parse(encoded_url)
       response = HTTParty.get('http://'"#{encoded_url}")
