@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 
   put 'users/charity/update', to: 'users#charity_update'
 
+  put 'users/charity/pause', to: 'users#charity_pause'
+
 end

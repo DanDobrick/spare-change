@@ -13,6 +13,11 @@
   <% if current_user.transactions %>
     <p>Thanks, <%= current_user.first_name %>! You will be donating: $<%= @user.bucket %> to <%= current_user.current_charity_name || 'somewhere great...' %></p>
   <% end %>
+  <% if current_user.plaid_id != nil %>
+    <%= form_tag(users_charity_pause_path, method: "put") do %>
+      <%= submit_tag("Stop Donating") %>
+    <% end %>
+  <% end %>
 
 <h3><%= current_user.first_name %>'s Charity Choice</h3>
   <% if current_user.current_charity_name %>
