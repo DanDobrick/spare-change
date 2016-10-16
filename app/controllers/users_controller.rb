@@ -54,8 +54,8 @@ class UsersController < ApplicationController
   end
 
   def donation_history
-    if logged_in && params[:id] == current_user.id
-      user = User.find_by(id: params[:id])
+    if logged_in? && params[:id].to_i == current_user.id
+      user = User.find_by(id: params[:id].to_i)
       if user
         @donations = user.donations.where(:pending => false).order(updated_at: :desc)
         render :history
