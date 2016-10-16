@@ -9,3 +9,8 @@
 <% end %>
 
 <h2>Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h2>
+<ol>
+  <% @top_five.each do |charity_array| %>
+    <li><%= charity_array[:name].titleize %>------$<%= charity_array[:amount] %></li>
+  <% end %>
+</ol>
