@@ -15,7 +15,7 @@ class PlaidController < ApplicationController
     current_user.stripe_account = stripe_user.id
     current_user.account_id = account_id
     current_user.save
-    plaid_user = Plaid::User.load(:connect, current_user.plaid_id)
+    plaid_user = Plaid::User.load(:auth, current_user.plaid_id)
     plaid_user.upgrade(:connect)
 
     redirect_to root_path
