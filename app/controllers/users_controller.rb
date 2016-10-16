@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: current_user.try(:id))
 
     if !logged_in? || @user.id != session[:user_id]
-      # render "../../public/404", layout: false
       redirect_to new_session_path
     else
       @user.update_bucket
@@ -30,7 +29,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: current_user.try(:id))
+    if logged_in?
+      @user = User.find_by(id: current_user.try(:id))
+    else
+      redirect_to new_session_path
+    end
   end
 
   def update
@@ -44,17 +47,32 @@ class UsersController < ApplicationController
   def charity_update
     @user = User.find_by(id: current_user.try(:id))
     @user.current_charity_ein = params[:charity_ein]
-    @user.current_charity_name = params[:charity_name].capitalize
+    @user.current_charity_name = params[:charity_name].titleize
     @user.save
 
     redirect_to user_path(@user)
   end
+
 
   def charity_pause
     @user = User.find_by(id: current_user.try(:id))
     @user.stop_donation
 
     redirect_to user_path(@user)
+  end
+
+  def donation_history
+    if logged_in? && params[:id].to_i == current_user.id
+      user = User.find_by(id: params[:id].to_i)
+      if user
+        @donations = user.donations.where(:pending => false).order(updated_at: :desc)
+        render :history
+      else
+        redirect_to root_path
+      end
+    else
+      redirect_to new_session_path
+    end
   end
 
   private

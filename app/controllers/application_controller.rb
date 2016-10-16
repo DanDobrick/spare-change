@@ -5,8 +5,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+    this_month_donations = Donation.where('updated_at > ?', Date.today.at_beginning_of_month)
+    donation_sum_array =  Donation.group(:current_charity_ein).sum(:user_bucket)
+    top_five_array = donation_sum_array.sort_by{|array| array[1]}.reverse[0..4]
+
+    @top_five = top_five_array.map do |ein, amount|
+      charity_name = get_charity_name(ein)
+      {name: charity_name, amount: amount}
+    end
     render '/index'
   end
-
 
 end
