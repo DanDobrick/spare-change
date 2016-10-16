@@ -23,9 +23,11 @@ class User < ActiveRecord::Base
   def update_bucket
     self.transactions.each do |transaction|
       unless self.rounded_transactions.include?(transaction.id)
-        rounded_amount = transaction.amount.ceil - transaction.amount
-        self.bucket += rounded_amount
-        self.rounded_transactions << transaction.id
+        if transaction.amount > 0
+          rounded_amount = transaction.amount.ceil - transaction.amount
+          self.bucket += rounded_amount
+          self.rounded_transactions << transaction.id
+        end
       end
     end
     self.save
