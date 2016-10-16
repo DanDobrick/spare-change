@@ -16,15 +16,4 @@ class ApplicationController < ActionController::Base
     render '/index'
   end
 
-  private
-
-  def get_charity_name(ein)
-    url = "data.orghunter.com/v1/charitysearch?user_key=#{ENV['CHARITY_TOKEN']}&ein=#{ein}"
-    encoded_url = URI.encode(url)
-    uri = URI.parse(encoded_url)
-    response = HTTParty.get("http://#{encoded_url}")
-    response['data'][0]['charityName']
-  end
-
-
 end

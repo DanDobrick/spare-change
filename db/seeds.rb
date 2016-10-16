@@ -19,3 +19,5 @@ User.create!(email: 'test5@test5.org', password: 'password', first_name: 'test5'
 2.times{ Donation.create!(user_id: rand(1..5), current_charity_ein: '271841913', user_bucket: rand(1..15))}
 2.times{ Donation.create!(user_id: rand(1..5), current_charity_ein: '113821730', user_bucket: rand(1..15))}
 2.times{ Donation.create!(user_id: rand(1..5), current_charity_ein: '223518379', user_bucket: rand(1..15))}
+5.times{ Donation.create!(user_id: 2, current_charity_ein: '232532598', user_bucket: rand(1..15), pending: false, updated_at: Date.today.at_beginning_of_month)}
+5.times{ Donation.create!(user_id: 2, current_charity_ein: '232532598', user_bucket: rand(1..15), pending: false, updated_at: Date.today)}

@@ -1,0 +1,13 @@
+<h1>Donation History</h1>
+<% if @donations == [] %>
+  It looks like you have not made a donation yet! Donations are processed at the end of the month, so come back on <%= Date.today.at_end_of_month.strftime('%x')%> to see your donations here.
+<% else %>
+  <ul>
+    <% @donations.each do |donation| %>
+      <li>Charity: <%= get_charity_name(donation.current_charity_ein) %></li>
+      <li>Amount: $<%= '%.2f' % donation.amount %></li>
+      <li>Date: <%= donation.updated_at.strftime('%x') %></li>
+      <br>
+    <% end %>
+  </ul>
+<% end %>
