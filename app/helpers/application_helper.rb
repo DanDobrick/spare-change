@@ -8,4 +8,7 @@ module ApplicationHelper
     @current_user ||= User.find_by(id: session[:user_id])
   end
 
+  def guidestar_ein(charity_ein)
+    charity_ein.insert(2, '-')
+  end
 end

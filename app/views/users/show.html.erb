@@ -1,5 +1,7 @@
 <h1>Welcome <%= current_user.first_name %>!</h1>
 
+<%= link_to "Edit info", edit_user_path, :method => :get %> <br><br>
+
 <% if !current_user.plaid_id %>
   <h3>Connect Your Bank Account</h3>
   <button id="linkButton">Connect Your Bank Account</button>
