@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root "application#index"
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create, :show, :edit, :update] do
     collection do
       post "plaid" => "plaid#create"
     end
