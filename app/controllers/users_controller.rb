@@ -50,6 +50,17 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def donation_history
+    user = User.find_by(id: params[:id])
+    if user
+      @donations = user.donations.where(:pending => false).order(updated_at: :desc)
+      render :history
+    else
+      redirect_to root_path
+    end
+
+  end
+
   private
 
   def user_params

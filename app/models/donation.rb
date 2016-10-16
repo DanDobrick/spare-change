@@ -17,4 +17,8 @@ class Donation < ActiveRecord::Base
     Stripe::Charge.create(payment_hash)
   end
 
+  def amount
+    self.user_bucket
+  end
+
 end
