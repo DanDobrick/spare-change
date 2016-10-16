@@ -15,6 +15,7 @@
 
 
 <%= form_tag(users_charity_update_path, method: "put") do %>
+  <%= hidden_field_tag "charity_ein", @charity['ein'] %>
   <%= hidden_field_tag "charity_name", @charity['charityName'] %>
   <%= submit_tag("Make this My Charity") %>
 <% end %>
