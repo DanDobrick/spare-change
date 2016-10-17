@@ -1,23 +1,35 @@
 
-    <%= @charity['charityName'] %>
-
-  <% if @charity['website'] != "" %>
-    <p><a href="http://<%= @charity['website'] %>"><%= @charity['website'] %></a>
-  <% else %>
-    <p>Website: Information Not Provided</p>
-  <% end %>
-
-  <% if @charity['missionStatement'] != "" %>
-    <p> <%= @charity['missionStatement']%></p>
-  <% else %>
-    <p>Mission Statement: Information Not Provided</p>
-  <% end %>
 
 
-<%= form_tag(users_charity_update_path, method: "put") do %>
-  <%= hidden_field_tag "charity_ein", @charity['ein'] %>
-  <%= hidden_field_tag "charity_name", @charity['charityName'] %>
-  <%= submit_tag("Make this My Charity") %>
-<% end %>
 
-<p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>">GuideStar Rating</a>
+  <div class="cards">
+    <div class="card">
+      <div class="card-image">
+        <img src="https://philanthropytimes.files.wordpress.com/2014/10/charity_donation_study.jpg" alt="" style="width:500px;height:200px;" alt="logo">
+      </div>
+      <div class="card-header">
+          <%= @charity['charityName'] %>
+      </div>
+      <div class="card-copy">
+        <% if @charity['website'] != "" %>
+          <p><a href="http://<%= @charity['website'] %>"><%= @charity['website'] %></a>
+        <% else %>
+          <p>Website: Information Not Provided</p>
+        <% end %>
+
+        <% if @charity['missionStatement'] != "" %>
+          <p> <%= @charity['missionStatement']%></p>
+        <% else %>
+          <p>Mission Statement: Information Not Provided</p>
+        <% end %>
+
+
+        <%= form_tag(users_charity_update_path, method: "put") do %>
+          <%= hidden_field_tag "charity_ein", @charity['ein'] %>
+          <%= hidden_field_tag "charity_name", @charity['charityName'] %>
+          <%= submit_tag("Make this My Charity", id: "charity_button") %>
+        <% end %>
+
+        <p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>">GuideStar Rating</a>
+      </div>
+    </div>
