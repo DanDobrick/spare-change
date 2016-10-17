@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015214233) do
+ActiveRecord::Schema.define(version: 20161017225635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161015214233) do
     t.datetime "updated_at",                                                  null: false
     t.string   "account_id"
     t.string   "rounded_transactions",                          default: [],               array: true
+    t.decimal  "max_donation"
   end
 
 end
