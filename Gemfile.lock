@@ -41,6 +41,13 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (1.2.0)
+      bourbon (>= 4.2)
+      sass (>= 3.4)
+      thor
+    bourbon (4.2.7)
+      sass (~> 3.4)
+      thor (~> 0.19)
     builder (3.2.2)
     capybara (2.9.2)
       addressable
@@ -92,6 +99,9 @@ GEM
     minitest (5.9.1)
     multi_json (1.12.1)
     multi_xml (0.5.5)
+    neat (1.8.0)
+      sass (>= 3.3)
+      thor (~> 0.19)
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -132,6 +142,7 @@ GEM
     rake (11.3.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    refills (0.2.0)
     rest-client (2.0.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
@@ -202,16 +213,20 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bitters
+  bourbon
   capybara
   coffee-rails (~> 4.1.0)
   dotenv
   httparty
   jbuilder (~> 2.0)
   jquery-rails
+  neat
   pg (~> 0.15)
   plaid
   pry
   rails (= 4.2.5)
+  refills
   rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

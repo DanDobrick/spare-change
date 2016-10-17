@@ -1,0 +1,19 @@
+@import 'css/0-plugins/plugins';
+@import "base/base";
+@import 'css/1-extras/extras';
+
+
+@font-face {
+  font-family: 'Vonique';
+  src: url('/assets/Vonique 64.ttf')
+}
+
+@font-face {
+  font-family: 'ormont';
+  src: url('/assets/Ormont_Light.ttf')
+}
+
+@font-face {
+  font-family: 'titillium';
+  src: url('/assets/TitilliumWeb-Light.ttf')
+}
