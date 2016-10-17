@@ -3,13 +3,23 @@
 <div class="flex-boxes">
   <a href="javascript:void(0)" class="flex-box flex-box-big">
     <%= image_tag('spareChange.jpeg') %>
-    <h1 class="flex-title box-title">Our Mission:</h1>
+  <h1 class="flex-title box-title">Mission Statement</h1>
     <p>Here at spareChange, we are dedicated to making a difference one cent at a time...</p>
   </a>
-  <a href='users/"#{current_user.id}"' class="flex-box">
-  <%#= link_to 'current_user.first_name', user_path(current_user) %>
+  <%if current_user %>
+    <a href='users/<%=current_user.id%>' class="flex-box">
+    <%#= link_to 'current_user.first_name', user_path(current_user) %>
+  <% else %>
+    <a href='/users/new' class="flex-box">
+  <% end %>
     <%= image_tag('spareChange.jpeg') %>
-    <h1 class="flex-title box-title"> View <%= current_user.first_name %>'s Profile</h1>
+    <h1 class="flex-title box-title">
+    <% if current_user %>
+      View <%= current_user.first_name %>'s Profile
+    <% else %>
+      Join Today!
+    <% end %>
+    </h1>
   </a>
   <a href="javascript:void(0)" class="flex-box flex-box-big">
     <%= image_tag('spareChange.jpeg') %>
@@ -38,10 +48,3 @@
 <% if !current_user %>
   <%= link_to 'Join Now!', new_user_path %>
 <% end %>
-
-<h2>Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h2>
-<ol>
-  <% @top_five.each do |charity_array| %>
-    <li><%= charity_array[:name].titleize %>------$<%= charity_array[:amount] %></li>
-  <% end %>
-</ol>
