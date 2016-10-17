@@ -554,6 +554,86 @@ header.navigation {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+  padding-top: 20px; }
+
+.card {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px #e6e6e6;
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 1em 1.5em 1em;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  text-align: center; }
+  .card .card-image {
+    background-color: #F8F2B4;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden; }
+    .card .card-image img {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%; }
+  .card .card-header {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 0.5em 0.75em;
+    transition: all 0.2s ease-in-out; }
+  .card .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 0.75em 0.75em; }
+    .card .card-copy p {
+      margin: 0 0 0.75em; }
+  .card:focus, .card:hover {
+    cursor: pointer; }
+    .card:focus img, .card:hover img {
+      opacity: 0.7; }
+  .card:active {
+    background-color: #f7f7f7; }
+    .card:active .card-header {
+      background-color: #f7f7f7; }
+  .card #charity_button {
+    background-color: #e0ebeb;
+    background-image: -webkit-linear-gradient(top, #e0ebeb 0%, #a8b9ca 50%, #8aa0bb 50%, #91a5bd 100%);
+    background-image: linear-gradient(to bottom,#e0ebeb 0%, #a8b9ca 50%, #8aa0bb 50%, #91a5bd 100%);
+    border: 1px solid #6b7c9a;
+    border-bottom: 1px solid #626c71;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 0 #fffff7;
+    color: #333333;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 7px 18px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #ebf5f5; }
+    .card #charity_button:hover:not(:disabled) {
+      background-color: #d3dcd9;
+      background-image: -webkit-linear-gradient(top, #d3dcd9 0%, #9eadb8 50%, #8396a9 50%, #8a9bac 100%);
+      background-image: linear-gradient(to bottom,#d3dcd9 0%, #9eadb8 50%, #8396a9 50%, #8a9bac 100%);
+      cursor: pointer; }
+    .card #charity_button:active:not(:disabled), .card #charity_button:focus:not(:disabled) {
+      box-shadow: inset 0 0 20px 0 #717771; }
+    .card #charity_button:disabled {
+      cursor: not-allowed;
+      opacity: 0.5; }
+
 #welcome {
   text-align: center;
   margin: 1.3em;
