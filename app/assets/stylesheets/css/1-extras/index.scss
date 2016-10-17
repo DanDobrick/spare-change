@@ -6,11 +6,12 @@ body{
   margin: 2em;
   padding: .5em;
   background: lighten(grey, 40%);
+  font-family: 'ormont';
   border-radius: 5px;
 }
 
 .box-title {
-  font-family: 'Widolte';
+  font-family: 'ormont';
 }
 
 .how-to{
@@ -91,7 +92,7 @@ body{
     p {
       color: transparentize($flex-box-color, 0.1);
       line-height: 1.5em;
-      font-family: 'Widolte';
+      font-family: 'titillium';
       margin: auto;
     }
   }

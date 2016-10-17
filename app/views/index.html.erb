@@ -15,7 +15,7 @@
   <% end %>
     <h1 class="flex-title box-title">
     <% if current_user %>
-      <p>View <%= current_user.first_name %>'s Profile</p>
+      <p><div class='box-title'>View <%= current_user.first_name %>'s Profile</div></p>
     <% else %>
       <p>Join Today!</p>
     <% end %>
@@ -34,7 +34,7 @@
   </a>
   <a href="javascript:void(0)" class="flex-box">
     <%= image_tag('spareChange.jpeg') %>
-    <h1 class="flex-title">Mission Satement</h1>
+    <h1 class="flex-title box-title">Mission Satement</h1>
     <p>Here at spareChange, we are dedicated to making a difference one cent at a time...</p>
   </a>
 </div>
