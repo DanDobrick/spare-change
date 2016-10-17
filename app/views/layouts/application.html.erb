@@ -32,18 +32,6 @@
   </div>
 </header>
 
-
-
-<nav>
-  <ul id='nav-ul'>
-      <% if logged_in? %>
-        
-      <% else %>
-        <li class='nav-list'><%= link_to "register", new_user_path, :method => :get %></li>
-        <li class='nav-list'><%= link_to "login", new_session_path, :method => :get %></li>
-      <% end %>
-  </ul>
-</nav>
 <%= yield %>
 
 </body>
