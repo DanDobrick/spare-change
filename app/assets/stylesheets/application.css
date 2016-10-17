@@ -34,6 +34,21 @@
   src: url('/assets/Money Money.ttf')
 }
 
-#welcome {
-  font-family: 'Money';
+@font-face {
+  font-family: 'bowl';
+  src: url('/assets/bowl.ttf')
+}
+
+@font-face {
+  font-family: 'PokeyDots';
+  src: url('/assets/PokeyDots.ttf')
+}
+
+@font-face {
+  font-family: 'TypeKeys';
+  src: url('/assets/TypeKeys.ttf')
+}
+
+h1 {
+  font-family: 'TypeKeys';
 }
