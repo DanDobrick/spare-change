@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     @top_five = top_five_array.map do |ein, amount|
       charity_name = get_charity_name(ein)
-      {name: charity_name, amount: amount}
+      {name: charity_name, amount: amount, ein: ein}
     end
     render '/index'
   end
