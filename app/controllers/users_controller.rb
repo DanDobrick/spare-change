@@ -16,15 +16,22 @@ class UsersController < ApplicationController
     end
   end
 
-
   def show
     @user = User.find_by(id: current_user.try(:id))
 
-    if !logged_in? || @user.id != session[:user_id]
-      redirect_to new_session_path
-    else
+    if logged_in? && @user.id == session[:user_id]
       @user.update_bucket
-      render :show
+      if request.xhr?
+        render json: @user
+      else
+        render :show
+      end
+      # respond_to do |format|
+      #   format.html {render :show}
+      #   format.js {}
+      # end
+    else
+      redirect_to new_session_path
     end
   end
 

@@ -1,5 +1,8 @@
 Rails.application.configure do
 
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+  config.assets.precompile += %w( .svg .eot .woff .ttf)
+
   #Add product default url (like in dev rb)
 
   # Settings specified here will take precedence over those in config/application.rb.

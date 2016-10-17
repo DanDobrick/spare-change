@@ -8,7 +8,6 @@ $(function(){
     product: 'auth',
     longtail: true,
     onLoad: function(){
-      // The Link module finished loading.
     },
     onSuccess: function(public_token, metadata) {
       $.ajax({
@@ -20,7 +19,12 @@ $(function(){
       })
     },
     onExit: function() {
-      console.log('exited')
+      $.ajax({
+        url: window.location.href,
+        method: 'GET',
+      }).done(function(response){
+        $('#donation-amount').text(response.bucket)
+      })
     }
   });
 
