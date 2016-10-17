@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :current_charity_ein
       t.string :current_charity_name
       t.string :last_purchase
+      t.decimal :max_donation
 
       t.timestamps null: false
     end
