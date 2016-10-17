@@ -3,8 +3,8 @@ $(function(){
     selectAccount: true,
     env: 'tartan',
     clientName: 'spareCHANGE',
-    // key: 'ab2ebb6e0fec3dfc5c1a18ccb3001f',
-    key: 'test_key',
+    key: 'ab2ebb6e0fec3dfc5c1a18ccb3001f',
+    // key: 'test_key',
     product: 'auth',
     longtail: true,
     onLoad: function(){
