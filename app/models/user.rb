@@ -66,4 +66,10 @@ class User < ActiveRecord::Base
     self.bucket = 0.0
     self.save
   end
+
+  def cap_donation
+    if self.bucket > self.max_donation
+      self.bucket = self.max_donation
+    end
+  end
 end
