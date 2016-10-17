@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 /*     +
  - * This is a manifest file that'll be compiled into application.css, which will include all the files   
  - * listed below.    
@@ -13,6 +16,7 @@
  - *= require_tree .    
  - *= require_self    
  - */
+>>>>>>> adaaaf045308e6859d6b8ce596d9e50bd4afaf42
 
 @font-face {
   font-family: 'CircleCaps';
