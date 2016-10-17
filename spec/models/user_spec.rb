@@ -77,6 +77,20 @@ describe User do
         end
       end
     end
+
+    describe 'User#cap_donation' do
+      describe 'when user bucket is   greater than max_donation' do
+        it 'it resets user bucket with    user max_donation' do
+            cy = User.new(email: 'cy@orgin.org', password: 'password', first_name: 'cy', last_name: 'bob')
+
+            cy.bucket = 20.00
+            cy.max_donation = 5.00
+            cy.cap_donation
+            expect(cy.bucket).to eq(5.00)
+          end
+        end
+      end
+    end
   end
 
   describe "validations" do
