@@ -626,8 +626,14 @@ header.navigation {
   text-align: center; }
 
 .charity-search-form {
-  width: 80%;
+  width: 90%;
   margin: auto; }
+
+.search-in-user {
+  text-align: center; }
+
+.donation-history-button {
+  text-align: center; }
 
 .login {
   max-width: 50em;

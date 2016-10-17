@@ -25,6 +25,7 @@
   <div class="card">
     <div class="card-image">
       <%= image_tag('jar-of-coins.jpeg', size: '200') %>
+      <h1><%= current_user.bucket %></h1>
     </div>
     <div class="card-header">
       <h3 class='card-text'><%= current_user.first_name %>'s Transactions This Month</h3>
@@ -88,11 +89,11 @@
 
   <div class="charity-search-form">
     <%= form_tag(charities_path, method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-    <% end %>
+    <%#= label_tag(:q, "Search for:") %>
+    <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
+    <!-- <div class='search-in-user'><%= submit_tag "Search", :name => nil %></div> -->
+    <% end %> <br>
   </div>
-  <div class="donation-history-button">
-    <a href="/users/<%= current_user.id %>/history">Donation History</a>  
+  <div class="donation-history-button"><button>
+    <a href="/users/<%= current_user.id %>/history"></a>Donation History</button>  
   </div>
