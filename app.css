@@ -369,6 +369,16 @@ header.navigation {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.hero-content {
+  max-width: 50em;
+  text-align: center;
+  padding-right: 10em;
+  background: red;
+  margin: auto; }
+  @media screen and (min-width: 50em) {
+    .hero-content {
+      text-align: left; } }
+
 @font-face {
   font-family: 'Vonique';
   src: url("/assets/Vonique 64.ttf"); }
