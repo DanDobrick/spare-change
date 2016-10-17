@@ -43,6 +43,7 @@ group :development, :test do
   gem 'dotenv'
   gem 'rspec-rails', '~> 3.5'
   gem 'capybara'
+  gem 'timecop'
 end
 
 group :development do

@@ -19,7 +19,12 @@ $(function(){
       })
     },
     onExit: function() {
-      location.reload();
+      $.ajax({
+        url: window.location.href,
+        method: 'GET',
+      }).done(function(response){
+        $('#donation-amount').text(response.bucket)
+      })
     }
   });
 

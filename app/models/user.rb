@@ -8,7 +8,12 @@ class User < ActiveRecord::Base
   def transactions
     if self.plaid_id
       plaid_user = Plaid::User.load(:connect, self.plaid_id)
-      all_transactions = plaid_user.transactions(start_date: Date.today.at_beginning_of_month, end_date: Date.today)
+      if self.created_at > Date.today.at_beginning_of_month
+        starting_date = self.created_at
+      else
+        starting_date = Date.today.at_beginning_of_month
+      end
+      all_transactions = plaid_user.transactions(start_date: starting_date, end_date: Date.today)
       transactions = all_transactions.map{|transaction| transaction if self.account_id == transaction.account_id}
       return transactions.compact
     else
