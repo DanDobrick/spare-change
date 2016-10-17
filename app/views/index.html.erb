@@ -15,9 +15,9 @@
   <% end %>
     <h1 class="flex-title box-title">
     <% if current_user %>
-      View <%= current_user.first_name %>'s Profile
+      <p>View <%= current_user.first_name %>'s Profile</p>
     <% else %>
-      Join Today!
+      <p>Join Today!</p>
     <% end %>
     </h1>
     <p>
@@ -26,10 +26,11 @@
   </a>
   <a href="charities" class="flex-box flex-box-big">
     <%= image_tag('list_icon.png') %>
-    <h1 class="flex-title">Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h1>
+    <h1 class="flex-title box-title">Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h1>
         <% @top_five.each do |charity_array| %>
           <p><%= charity_array[:name].titleize %>------$<%= charity_array[:amount] %></p>
         <% end %>
+
   </a>
   <a href="javascript:void(0)" class="flex-box">
     <%= image_tag('spareChange.jpeg') %>
@@ -37,3 +38,4 @@
     <p>Here at spareChange, we are dedicated to making a difference one cent at a time...</p>
   </a>
 </div>
+<footer style ='color: red;'>THIS IS A FOOTER</footer><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

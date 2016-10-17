@@ -4,11 +4,13 @@ body{
 .title {
   text-align: center;
   margin: 2em;
-  background: red;
+  padding: .5em;
+  background: lighten(grey, 40%);
+  border-radius: 5px;
 }
 
 .box-title {
-  font-family: "Arial";
+  font-family: 'Widolte';
 }
 
 .how-to{
@@ -68,7 +70,7 @@ body{
 
         &:focus,
         &:hover {
-          background-color: transparentize($color-from-list, .09);
+          background-color: transparentize($color-from-list, .08);
         }
       }
     }
@@ -89,6 +91,7 @@ body{
     p {
       color: transparentize($flex-box-color, 0.1);
       line-height: 1.5em;
+      font-family: 'Widolte';
       margin: auto;
     }
   }

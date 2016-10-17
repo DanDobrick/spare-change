@@ -104,7 +104,8 @@ header.navigation {
     display: block;
     line-height: $navigation-height;
     overflow: hidden;
-    padding-right: 0.8em;
+    padding-left: 0.8em;
+    font-family: 'Vonique';
     text-align: right;
     width: 100%;
     z-index: 9999;
@@ -343,4 +344,13 @@ header.navigation {
       }
     }
   }
+}
+
+.search-form {
+  @include button(pill);
+  position: inline;
+  float: right;
+}
+
+.search-entry {
 }

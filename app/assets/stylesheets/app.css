@@ -6,11 +6,11 @@ html {
   box-sizing: inherit; }
 
 .title {
-  font-family: 'PokeyDots';
-  text-align: center; }
+  text-align: center;
+  font-family: 'Vonique'; }
 
 .box-title {
-  font-family: "Arial"; }
+  font-family: 'Widolte'; }
 
 .flex-boxes {
   align-items: stretch;
@@ -25,7 +25,7 @@ html {
     display: block; }
   .flex-boxes .flex-box {
     align-self: stretch;
-    background: #f7f7f7;
+    background: #e6e6e6;
     border-radius: 3px;
     box-shadow: inset 0 0 1px #DDD, 0 2px 4px #e6e6e6;
     display: block;
@@ -70,6 +70,7 @@ html {
     .flex-boxes .flex-box p {
       color: rgba(51, 51, 51, 0.6);
       line-height: 1.5em;
+      font-family: 'Widolte';
       margin: auto; }
   .flex-boxes .flex-box-big {
     flex: 1 1 40em; }
@@ -136,7 +137,8 @@ header.navigation {
     display: block;
     line-height: 60px;
     overflow: hidden;
-    padding-right: 0.8em;
+    padding-left: 0.8em;
+    font-family: 'Vonique';
     text-align: right;
     width: 100%;
     z-index: 9999; }
@@ -297,6 +299,46 @@ header.navigation {
           box-sizing: border-box;
           display: block; } }
 
+.search-form {
+  border: 1px solid #3371b2;
+  border-color: #3371b2 #2457a3 #164297;
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 0 #64a9f2;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: normal;
+  line-height: 1;
+  background-color: #4294f0;
+  background-image: -webkit-linear-gradient(#4294f0, #0156fe);
+  background-image: linear-gradient(#4294f0, #0156fe);
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #2762bf;
+  background-clip: padding-box;
+  position: inline;
+  float: right; }
+  .search-form:hover:not(:disabled) {
+    background-color: #2d88ee;
+    background-image: -webkit-linear-gradient(#2d88ee, #1554ce);
+    background-image: linear-gradient(#2d88ee, #1554ce);
+    background-clip: padding-box;
+    border: 1px solid #2062a7;
+    border-color: #2062a7 #0e479a #01318e;
+    box-shadow: inset 0 1px 0 0 #519cf0;
+    cursor: pointer;
+    text-shadow: 0 -1px 1px #134faf; }
+  .search-form:active:not(:disabled), .search-form:focus:not(:disabled) {
+    background: #226edd;
+    border: 1px solid #0d3c8c;
+    border-bottom: 1px solid #062d8d;
+    box-shadow: inset 0 0 6px 3px #0c44b8;
+    text-shadow: 0 -1px 1px #1a52aa; }
+  .search-form:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
+
 @font-face {
   font-family: 'CircleCaps';
   src: url("/assets/CircleCaps.ttf") format("truetype"); }
@@ -306,6 +348,9 @@ header.navigation {
 @font-face {
   font-family: 'WhereMyKeys';
   src: url("/assets/Where My Keys 2.otf"); }
+@font-face {
+  font-family: 'Widolte';
+  src: url("/assets/Widolte_light_demo.otf"); }
 @font-face {
   font-family: 'Money';
   src: url("/assets/Money Money.ttf"); }
@@ -318,5 +363,11 @@ header.navigation {
 @font-face {
   font-family: 'TypeKeys';
   src: url("/assets/TypeKeys.ttf"); }
+@font-face {
+  font-family: 'CleanUp';
+  src: url("/assets/clean up your mess.ttf"); }
+@font-face {
+  font-family: 'Vonique';
+  src: url("/assets/Vonique 64.ttf"); }
 
 /*# sourceMappingURL=app.css.map */
