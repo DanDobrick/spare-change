@@ -39,12 +39,15 @@ describe User do
     end
 
     describe "When plaid id is set" do
+      before do
+        Timecop.freeze(Time.local(2016, 10, 16))
+      end
       it 'has a set of transcactions' do
-        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'], created_at: Date.new(2016,10,1))
         expect(billy.transactions).to_not be([])
       end
       it 'User#update_bucket updates the bucket amount' do
-        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+        billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'], created_at: Date.new(2016,10,1))
         expect{billy.update_bucket}.to change(billy, :bucket)
       end
     end
@@ -52,7 +55,7 @@ describe User do
     describe 'User#empty_bucket(end_of_month)' do
       describe 'when end_of_month is true or not passed in' do
         it 'it empties bucket and resets transactions' do
-          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'], created_at: Date.new(2016,10,1))
 
           billy.update_bucket
           expect(billy.bucket).to_not eq(0)
@@ -64,7 +67,7 @@ describe User do
 
       describe 'when end_of_month is false' do
         it 'it empties bucket and DOES NOT reset transactions' do
-          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'])
+          billy = User.new(email: 'billy_bob@orgin.org', password: 'password', first_name: 'billy', last_name: 'bob', plaid_id: ENV['DAN_PLAID_ID'], stripe_account: ENV['DAN_STRIPE_ID'], account_id: ENV['DAN_ACCOUNT_ID'], created_at: Date.new(2016,10,1))
 
           billy.update_bucket
           expect(billy.bucket).to_not eq(0)
