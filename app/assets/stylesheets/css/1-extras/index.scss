@@ -3,7 +3,7 @@ body{
 }
 .title {
   text-align: center;
-  margin: 2em;
+  margin: 1.3em;
   padding: .5em;
   background: lighten(grey, 40%);
   border-radius: 5px;
@@ -38,7 +38,7 @@ body{
     #F6C05C,
     #72BFBF,
     #92B1E3,
-    #CCC,
+    tomato,
     #E3D743,
     tomato;
 
@@ -71,6 +71,9 @@ body{
         &:focus,
         &:hover {
           background-color: transparentize($color-from-list, .08);
+        }
+        &:hover > *{
+        color: black;
         }
       }
     }

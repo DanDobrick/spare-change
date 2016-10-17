@@ -10,7 +10,7 @@ body {
 
 .title {
   text-align: center;
-  margin: 2em;
+  margin: 1.3em;
   padding: .5em;
   background: #e6e6e6;
   border-radius: 5px; }
@@ -52,26 +52,38 @@ body {
       border-top: 6px solid #F6C05C; }
       .flex-boxes .flex-box:nth-child(1):focus, .flex-boxes .flex-box:nth-child(1):hover {
         background-color: rgba(246, 192, 92, 0.92); }
+      .flex-boxes .flex-box:nth-child(1):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(2) {
       border-top: 6px solid #72BFBF; }
       .flex-boxes .flex-box:nth-child(2):focus, .flex-boxes .flex-box:nth-child(2):hover {
         background-color: rgba(114, 191, 191, 0.92); }
+      .flex-boxes .flex-box:nth-child(2):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(3) {
       border-top: 6px solid #92B1E3; }
       .flex-boxes .flex-box:nth-child(3):focus, .flex-boxes .flex-box:nth-child(3):hover {
         background-color: rgba(146, 177, 227, 0.92); }
+      .flex-boxes .flex-box:nth-child(3):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(4) {
-      border-top: 6px solid #CCC; }
+      border-top: 6px solid tomato; }
       .flex-boxes .flex-box:nth-child(4):focus, .flex-boxes .flex-box:nth-child(4):hover {
-        background-color: rgba(204, 204, 204, 0.92); }
+        background-color: rgba(255, 99, 71, 0.92); }
+      .flex-boxes .flex-box:nth-child(4):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(5) {
       border-top: 6px solid #E3D743; }
       .flex-boxes .flex-box:nth-child(5):focus, .flex-boxes .flex-box:nth-child(5):hover {
         background-color: rgba(227, 215, 67, 0.92); }
+      .flex-boxes .flex-box:nth-child(5):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(6) {
       border-top: 6px solid tomato; }
       .flex-boxes .flex-box:nth-child(6):focus, .flex-boxes .flex-box:nth-child(6):hover {
         background-color: rgba(255, 99, 71, 0.92); }
+      .flex-boxes .flex-box:nth-child(6):hover > * {
+        color: black; }
     .flex-boxes .flex-box img {
       display: block;
       height: 3em;
