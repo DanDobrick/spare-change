@@ -1,0 +1,10 @@
+.hero-content {
+  max-width: 50em;
+  text-align: center;
+  @include media(50em) {
+    text-align: left;
+  }
+  padding-right: 10em;
+  background: red;
+  margin: auto;
+}
