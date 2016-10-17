@@ -10,7 +10,7 @@ body {
 
 .title {
   text-align: center;
-  margin: 2em;
+  margin: 1.3em;
   padding: .5em;
   background: #e6e6e6;
   font-family: 'ormont';
@@ -53,26 +53,38 @@ body {
       border-top: 6px solid #F6C05C; }
       .flex-boxes .flex-box:nth-child(1):focus, .flex-boxes .flex-box:nth-child(1):hover {
         background-color: rgba(246, 192, 92, 0.92); }
+      .flex-boxes .flex-box:nth-child(1):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(2) {
       border-top: 6px solid #72BFBF; }
       .flex-boxes .flex-box:nth-child(2):focus, .flex-boxes .flex-box:nth-child(2):hover {
         background-color: rgba(114, 191, 191, 0.92); }
+      .flex-boxes .flex-box:nth-child(2):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(3) {
       border-top: 6px solid #92B1E3; }
       .flex-boxes .flex-box:nth-child(3):focus, .flex-boxes .flex-box:nth-child(3):hover {
         background-color: rgba(146, 177, 227, 0.92); }
+      .flex-boxes .flex-box:nth-child(3):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(4) {
-      border-top: 6px solid #CCC; }
+      border-top: 6px solid tomato; }
       .flex-boxes .flex-box:nth-child(4):focus, .flex-boxes .flex-box:nth-child(4):hover {
-        background-color: rgba(204, 204, 204, 0.92); }
+        background-color: rgba(255, 99, 71, 0.92); }
+      .flex-boxes .flex-box:nth-child(4):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(5) {
       border-top: 6px solid #E3D743; }
       .flex-boxes .flex-box:nth-child(5):focus, .flex-boxes .flex-box:nth-child(5):hover {
         background-color: rgba(227, 215, 67, 0.92); }
+      .flex-boxes .flex-box:nth-child(5):hover > * {
+        color: black; }
     .flex-boxes .flex-box:nth-child(6) {
       border-top: 6px solid tomato; }
       .flex-boxes .flex-box:nth-child(6):focus, .flex-boxes .flex-box:nth-child(6):hover {
         background-color: rgba(255, 99, 71, 0.92); }
+      .flex-boxes .flex-box:nth-child(6):hover > * {
+        color: black; }
     .flex-boxes .flex-box img {
       display: block;
       height: 3em;
@@ -356,6 +368,77 @@ header.navigation {
   .search-form:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
+
+#welcome {
+  text-align: center;
+  margin: 1.3em;
+  padding: .5em;
+  background: #e6e6e6;
+  font-family: 'ormont';
+  border-radius: 5px; }
+
+.edit-user {
+  text-align: center;
+  max-width: 30%;
+  margin: auto;
+  padding: .5em;
+  background: #e6e6e6;
+  font-family: 'ormont';
+  border-radius: 5px; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.card {
+  background-color: #f6f6f6;
+  border: 1px solid gainsboro;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px #e6e6e6;
+  cursor: pointer;
+  flex-basis: 15em;
+  flex-grow: 1;
+  margin: 0 1em 1.5em 1em;
+  position: relative;
+  transition: all 0.2s ease-in-out; }
+  .card .card-image {
+    background-color: #F8F2B4;
+    height: 150px;
+    max-height: 150px;
+    overflow: hidden; }
+    .card .card-image img {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      opacity: 1;
+      transition: all 0.2s ease-in-out;
+      width: 100%; }
+  .card .card-header {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid gainsboro;
+    border-radius: 3px 3px 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: 0.5em 0.75em;
+    transition: all 0.2s ease-in-out; }
+  .card .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: 0.75em 0.75em; }
+    .card .card-copy p {
+      margin: 0 0 0.75em; }
+  .card:focus, .card:hover {
+    cursor: pointer; }
+    .card:focus img, .card:hover img {
+      opacity: 0.7; }
+  .card:active {
+    background-color: #f6f6f6; }
+    .card:active .card-header {
+      background-color: #f6f6f6; }
+
+.card-text {
+  font-family: 'titillium';
+  text-align: center; }
 
 @font-face {
   font-family: 'Vonique';
