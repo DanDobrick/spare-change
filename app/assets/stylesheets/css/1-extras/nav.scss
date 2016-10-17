@@ -323,7 +323,6 @@ header.navigation {
         padding: 0 9px;
         position: absolute;
         right: 0.3em;
-        top: 0.3em;
 
         img {
           height: 12px;
@@ -336,7 +335,9 @@ header.navigation {
     @include media($horizontal-bar-mode) {
       display: inline-block;
       position: relative;
-      width: 16em;
+      width: 18em;
+      margin-right: 3em;
+      margin-top: -3px;
 
       input {
         box-sizing: border-box;
@@ -352,5 +353,3 @@ header.navigation {
   float: right;
 }
 
-.search-entry {
-}
