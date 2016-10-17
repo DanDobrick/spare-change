@@ -5,7 +5,9 @@
   <div class="cards">
     <div class="card">
       <div class="card-image">
-        <img src="https://philanthropytimes.files.wordpress.com/2014/10/charity_donation_study.jpg" alt="" style="width:500px;height:200px;" alt="logo">
+        <% images = ['jar-of-coins.jpg', 'giving-hand.jpg', 'real-coins.jpg'] %>
+        <%= image_tag(images.sample) %>
+        <!-- <img src="https://philanthropytimes.files.wordpress.com/2014/10/charity_donation_study.jpg" alt="" style="width:500px;height:200px;" alt="logo"> -->
       </div>
       <div class="card-header">
           <%= @charity['charityName'] %>
