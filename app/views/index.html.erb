@@ -2,42 +2,38 @@
 
 <div class="flex-boxes">
   <a href="javascript:void(0)" class="flex-box flex-box-big">
-    <%= image_tag('spareChange.jpeg', size: '80') %>
-    <h1 class="flex-title box-title">Mission Statement</h1>
+    <%= image_tag('spareChange.jpeg') %>
+    <h1 class="flex-title box-title">Our Mission:</h1>
     <p>Here at spareChange, we are dedicated to making a difference one cent at a time...</p>
   </a>
   <a href='users/"#{current_user.id}"' class="flex-box">
   <%#= link_to 'current_user.first_name', user_path(current_user) %>
-    <%= image_tag('spareChange.jpeg', size: '80') %>
+    <%= image_tag('spareChange.jpeg') %>
     <h1 class="flex-title box-title"> View <%= current_user.first_name %>'s Profile</h1>
   </a>
-<!--   <a href="javascript:void(0)" class="flex-box">
-    <%= image_tag('spareChange.jpeg', size: '80') %>
-    <h1 class="flex-title">A Flex Box Item</h1>
-    <p>Lorem adipisicing elit. Voluptas consectetur tempora quis nam, officia tenetur blanditiis in illo dolor?</p>
-  </a> -->
   <a href="javascript:void(0)" class="flex-box flex-box-big">
-    <%= image_tag('spareChange.jpeg', size: '80') %>
-    <h1 class="flex-title">Another Wide Item</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quis ipsum, officia, aperiam tenetur dolor molestiae voluptate perferendis dolorem vel ex, unde fugit blanditiis sapiente.</p>
+    <%= image_tag('spareChange.jpeg') %>
+    <h1 class="flex-title">Top 5 Charities for <%= Date::MONTHNAMES[Date.today.month] %></h1>
+    <p>
+      <ul>
+        <% @top_five.each do |charity_array| %>
+          <li><%= charity_array[:name].titleize %>------$<%= charity_array[:amount] %></li>
+        <% end %>
+      </ul>
+    </p>
   </a>
   <a href="javascript:void(0)" class="flex-box">
-    <%= image_tag('spareChange.jpeg', size: '80') %>
+    <%= image_tag('spareChange.jpeg') %>
     <h1 class="flex-title">Flex Box Item</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo obcaecati in provident illo.</p>
   </a>
   <a href="javascript:void(0)" class="flex-box">
-    <%= image_tag('spareChange.jpeg', size: '80') %>
+    <%= image_tag('spareChange.jpeg') %>
     <h1 class="flex-title">Last Flex Box Item</h1>
     <p>Lorem ipsum dolor sit amet, elit. Rem, illum.</p>
   </a>
 </div>
 
-
-
-<!-- <blockquote>
-  Here at spareChange, we are dedicated to making a difference one cent at a time
-</blockquote> -->
 
 <% if !current_user %>
   <%= link_to 'Join Now!', new_user_path %>
