@@ -8,8 +8,8 @@ class User < ActiveRecord::Base
   def transactions
     if self.plaid_id
       plaid_user = Plaid::User.load(:connect, self.plaid_id)
-      if user.created_at > Date.today.at_beginning_of_month
-        starting_date = user.created_at
+      if self.created_at > Date.today.at_beginning_of_month
+        starting_date = self.created_at
       else
         starting_date = Date.today.at_beginning_of_month
       end
