@@ -1,13 +1,13 @@
 <h1 class='title'>spareChange</h1>
 
 <div class="flex-boxes">
-  <a href="javascript:void(0)" class="flex-box flex-box-big">
+  <a href="/about" class="flex-box flex-box-big"  >
     <%= image_tag('coins.png') %>
   <h1 class="flex-title box-title">How It Works</h1>
     <p class='how-to'>Using our secure login-system, you register your debit card and we round up each of your transactions. Once you reach $5 in round-ups, we debit your account and donate the money to the charity of your choosing.</p>
   </a>
   <%if current_user %>
-    <a href='users/<%=current_user.id%>' class="flex-box">
+    <a href='users/<%=current_user.id%>' class="flex-box" data-no-turbolink='true'>
     <%= image_tag('user.png') %>
   <% else %>
     <a href='/users/new' class="flex-box">
@@ -36,7 +36,7 @@
         <% end %>
 
   </a>
-  <a href="javascript:void(0)" class="flex-box">
+  <a href="about" class="flex-box">
     <%= image_tag('spareChange.png') %>
     <h1 class="flex-title box-title">Mission Statement</h1>
     <p>Here at spareChange, we are dedicated to making a difference one cent at a time...</p>

@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     render '/index'
   end
 
+  def about
+    render '/about'
+  end
+
 end
