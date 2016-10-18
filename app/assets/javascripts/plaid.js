@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).on('ready', function(){
   var linkHandler = Plaid.create({
     selectAccount: true,
     env: 'tartan',
