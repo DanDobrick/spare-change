@@ -59,12 +59,20 @@
   </div>
 </div>
 
+<div class="donation-history-button">
+  <a href="/users/<%= current_user.id %>/history">
+    <button>
+      Donation History
+    </button>
+  </a>
+</div>
+
 
 
 
 
 <%# if !current_user.plaid_id %>
-  <<!-- h3>Connect Your Bank Account</h3>
+  <!-- h3>Connect Your Bank Account</h3>
   <button id="linkButton">Connect Your Bank Account</button> -->
 <%# else %>
   <!-- <%#= current_user.first_name %> has already connected an account. -->
@@ -87,13 +95,11 @@
     <!-- <p><%#= current_user.first_name %> does not have a charity selected.</p> -->
   <%# end %>
 
-  <div class="charity-search-form">
-    <%= form_tag(charities_path, method: "get") do %>
+  <!-- <div class="charity-search-form"> -->
+    <%#= form_tag(charities_path, method: "get") do %>
     <%#= label_tag(:q, "Search for:") %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
-    <!-- <div class='search-in-user'><%= submit_tag "Search", :name => nil %></div> -->
-    <% end %> <br>
-  </div>
-  <div class="donation-history-button"><button>
-    <a href="/users/<%= current_user.id %>/history"></a>Donation History</button>  
-  </div>
+    <%#= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
+    <!-- <div class='search-in-user'><%#= submit_tag "Search", :name => nil %></div> -->
+    <%# end %>
+  <!-- </div> -->
+ 
