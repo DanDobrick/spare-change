@@ -1,55 +1,30 @@
-.card {
-    // background-color: transparent;
-    // border-style: none;
-    // border-color: transparent;
-    margin: auto;
-
+.outer-charities {
+  @include outer-container;
+  padding-top: 10px;
 }
 
-#charities-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
+.charity-li {
+  @include span-columns(6);
+  margin: 10px;
+  border: 1px, solid, black;
+  border-radius: 5px;
+  text-align: center;
+  background: #e0ebeb;
 }
-
-#charities-list {
-
-  padding-top: 50px;
-  margin: auto;
-  //  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  //  -moz-column-count: 3; /* Firefox */
-  //  column-count: 3;
-  //  color: red;
-  //  border-style: none;
-  //  border-color: transparent;
-   }
 
 #charity_name {
   font-size: 20px;
-
-}
-
-.charity-item {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: auto;
-  // font-weight: bolder;
-  font-style: oblique;
-
 }
 
 a:link {
-  color: white;
+  color: #a8551e;
 }
 
-a:visited, a:hover {
-  color: #e58f4e;
+a:hover, a:visited {
+  color: black;
 }
 
 #charity_button {
-@include button(#a8551e);
+  @include button(#a8551e);
+  font-size: 13px;
 }
