@@ -7,15 +7,13 @@ $(function(){
     key: 'test_key',
     product: 'auth',
     longtail: true,
-    onLoad: function(){
-    },
     onSuccess: function(public_token, metadata) {
       $.ajax({
         url: '/users/plaid',
         method: 'POST',
         data: {public_token: public_token, metadata: metadata}
       }).done(function(response){
-        console.log(response)
+
       })
     },
     onExit: function() {
@@ -28,7 +26,7 @@ $(function(){
     }
   });
 
-  document.getElementById('linkButton').onclick = function() {
+  $('.linkButton').on('click', function() {
     linkHandler.open();
-  };
+  });
 });

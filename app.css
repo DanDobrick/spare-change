@@ -713,7 +713,8 @@ header.navigation {
   text-align: center; }
 
 .donation-history-button {
-  text-align: center; }
+  text-align: center;
+  margin: auto; }
 
 .login {
   max-width: 50em;
