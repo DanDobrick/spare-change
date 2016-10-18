@@ -746,7 +746,8 @@ header.navigation {
   .vertical-tabs-container li {
     padding: 0.5em;
     margin-left: 1.3em;
-    margin-right: 1.3em;
+    margin-right: 1.3em; }
+  .vertical-tabs-container .steps li {
     list-style-type: decimal; }
   .vertical-tabs-container a {
     color: #1565c0;

@@ -1,4 +1,6 @@
 .vertical-tabs-container {
+  $container-margin: 2em;
+  $container-top-margin: 4em;
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-background-color: white !default;
@@ -18,8 +20,6 @@
   $tab-inactive-color: $base-background-color;
   $vertical-tabs-height: em(400);
   $vertical-tab-mode: $medium-screen;
-  $container-margin: 2em;
-  $container-top-margin: 4em;
   $li-horizontal-margin: 1.3em;
 
   @include clearfix;
@@ -36,6 +36,9 @@
     padding: 0.5em;
     margin-left: $li-horizontal-margin;
     margin-right: $li-horizontal-margin;
+  }
+
+  .steps li{
     list-style-type: decimal;
   }
 
