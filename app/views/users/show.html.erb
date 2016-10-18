@@ -57,12 +57,15 @@
     </div>
   </div>
 </div>
-
   <div class="charity-search-form">
     <%= form_tag(charities_path, method: "get") do %>
     <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
     <% end %> <br>
   </div>
-  <div class="donation-history-button"><button>
-    <a href="/users/<%= current_user.id %>/history"></a>Donation History</button>  
-  </div>
+<div class="donation-history-button">
+  <a href="/users/<%= current_user.id %>/history">
+    <button>
+      Donation History
+    </button>
+  </a>
+</div>
