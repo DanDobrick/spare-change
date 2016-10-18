@@ -1,0 +1,30 @@
+.outer-charities {
+  @include outer-container;
+  padding-top: 10px;
+}
+
+.charity-li {
+  @include span-columns(6);
+  margin: 10px;
+  border: 1px, solid, black;
+  border-radius: 5px;
+  text-align: center;
+  background: #e0ebeb;
+}
+
+#charity_name {
+  font-size: 20px;
+}
+
+a:link {
+  color: #a8551e;
+}
+
+a:hover, a:visited {
+  color: black;
+}
+
+#charity_button {
+  @include button(#a8551e);
+  font-size: 13px;
+}
