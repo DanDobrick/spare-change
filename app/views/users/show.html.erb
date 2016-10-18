@@ -1,6 +1,8 @@
 <h1 id='welcome'>Welcome <%= current_user.first_name.titleize %>!</h1>
 
-<div class='edit-user'><%= link_to "Edit info", edit_user_path, :method => :get %> </div><br><br>
+<div class="edit-user">
+</div>
+
 
 <div class="cards">
   <div class="card">
@@ -63,7 +65,14 @@
   </div>
 </div>
 
+
 <div class="donation-history-button">
+  <a href="/users/<%= current_user.id %>/edit">
+    <button class='style-btn'>
+      Edit Information
+    </button>
+  </a>
+
   <a href="/users/<%= current_user.id %>/history">
     <button class='style-btn'>
       Donation History
