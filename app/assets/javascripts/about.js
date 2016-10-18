@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+$(document).on('ready', function(){
   $(".js-vertical-tab-content").hide();
   $(".js-vertical-tab-content:first").show();
 
