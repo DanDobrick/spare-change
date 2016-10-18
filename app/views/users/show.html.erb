@@ -1,4 +1,4 @@
-<h1 id='welcome'>Welcome <%= current_user.first_name %>!</h1>
+<h1 id='welcome'>Welcome <%= @user.first_name %>!</h1>
 
 <div class='edit-user'><%= link_to "Edit info", edit_user_path, :method => :get %> </div><br><br>
 
@@ -9,10 +9,10 @@
       <%= image_tag('real-coins.jpeg') %>
     </div>
     <div class="card-header">
-    <% if !current_user.plaid_id %>
+    <% if !@user.plaid_id %>
       <h3 class='card-text'>Click to Connect Your Bank Account</h3>
     <% else %>
-      <p class='card-text'><%= current_user.first_name %> has already connected an account.</p>
+      <p class='card-text'><%= @user.first_name %> has already connected an account.</p>
       <% end %>
     </div>
     <p class='card-text'>Thank you for all that you do.</p>
@@ -23,19 +23,19 @@
     <div class="card-image">
       <section id='user-bucket'>
         <%=image_tag('jar-of-coins.jpeg', size: '200', class: 'user-bucket-img') %>
-        <p id='bucket-text'>$<%= current_user.bucket %></p>
+        <p id='bucket-text'>$<%= @user.bucket %></p>
       </section>
 
-      <h1><%= current_user.bucket %></h1>
+      <h1><%= @user.bucket %></h1>
     </div>
     <div class="card-header">
       <h3 class='card-text'>Round up total for <%= Date::MONTHNAMES[Date.today.month] %></h3>
     </div>
     <div class="card-copy card-text" id='round-up'>
-        <% if current_user.transactions %>
-          <p>Thanks, <%= current_user.first_name %>! You will be donating: $<span id="donation-amount" ><%= '%.2f' % @user.bucket %></span> to <%= current_user.current_charity_name || 'somewhere great...' %></p>
+        <% if @user.transactions %>
+          <p>Thanks, <%= @user.first_name %>! You will be donating: $<span id="donation-amount" ><%= '%.2f' % @user.bucket %></span> to <%= @user.current_charity_name || 'somewhere great...' %></p>
         <% end %>
-        <% if current_user.plaid_id != nil %>
+        <% if @user.plaid_id != nil %>
           <%= form_tag(users_charity_pause_path, method: "put", id: 'pause-form') do %>
             <%= submit_tag("Pause Donations") %>
           <% end %>
@@ -50,13 +50,13 @@
       <%= image_tag('giving-hand.jpeg', size: '200') %>
     </div>
     <div class="card-header">
-      <h3 class='card-text'><%= current_user.first_name %>'s Charity Choice</h3>
+      <h3 class='card-text'><%= @user.first_name %>'s Charity Choice</h3>
     </div>
     <div class="card-copy card-text">
-        <% if current_user.current_charity_name %>
-          <p><%= current_user.first_name %>'s Current Charity is: <%= current_user.current_charity_name %></p>
+        <% if @user.current_charity_name %>
+          <p><%= @user.first_name %>'s Current Charity is: <%= @user.current_charity_name %></p>
         <% else %>
-          <p><%= current_user.first_name %> does not have a charity selected.</p>
+          <p><%= @user.first_name %> does not have a charity selected.</p>
         <% end %>
     </div>
   </div>
@@ -67,7 +67,7 @@
     <% end %> <br>
   </div>
 <div class="donation-history-button">
-  <a href="/users/<%= current_user.id %>/history">
+  <a href="/users/<%= @user.id %>/history">
     <button class='style-btn'>
       Donation History
     </button>
