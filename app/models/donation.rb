@@ -10,7 +10,8 @@ class Donation < ActiveRecord::Base
                       'Charity EIN' => self.user.current_charity_ein, 
                       'Charity name' => self.user.current_charity_name,
                       'Donor full name' => self.user.full_name,
-                      'Donor email' => self.user.email
+                      'Donor email' => self.user.email,
+                      'anonymous' => 'yes'
                              }, 
                     receipt_email: self.user.email
                    }
