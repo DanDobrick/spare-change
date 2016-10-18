@@ -1,0 +1,25 @@
+.donation-history {
+  color: #a8551e;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+}
+
+.donation-title {
+  color: #e0ebeb;
+  margin-top: 50px;
+  font-size: 50px;  
+}
+
+.donation-outer {
+  @include outer-container;
+}
+
+.donation-columns {
+  @include span-columns(2);
+  background-color: #e0ebeb;
+  border: 1px, solid, #e0ebeb;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px; 
+}
