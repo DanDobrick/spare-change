@@ -15,7 +15,7 @@
       <p class='card-text'>You have already connected an account.</p>
       <% end %>
     </div>
-      <div>
+      <div id='button-container'>
        <% if @user.plaid_id != nil %>
           <%= form_tag(users_charity_pause_path, method: "put", id: 'pause-form') do %>
             <%= submit_tag("Pause Donations", class: "style-btn") %>
