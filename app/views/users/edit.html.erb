@@ -1,10 +1,11 @@
-<h2>Edit User</h2>
-
-<% if @errors %>
+<div class="login">
+  <% if @errors %>
   <%= render '/errors' %>
-<% end %>
+  <% end %>
 
-<%= form_for @user do |f| %>
+  <%= form_for @user do |f| %>
+  <h1 id="form-h1">Edit User</h1>
+  <br>
   <p>
     <%= f.label :first_name %>
     <%= f.text_field :first_name%>
@@ -19,10 +20,11 @@
   </p>
 
   <p>
-  <p>
-   <%= f.label :max_donation %>
-   <%= f.text_field :max_donation %>
+    <p>
+     <%= f.label :max_donation %>
+     <%= f.text_field :max_donation %>
+   </p>
+   <%= f.submit class: "form-btn" %>
  </p>
-    <%= f.submit %>
-  </p>
-<% end %>
+ <% end %>
+</div>

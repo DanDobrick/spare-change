@@ -1,4 +1,4 @@
-<h1 id='welcome'>Welcome <%= @user.first_name %>!</h1>
+<h1 id='welcome'>Welcome <%= @user.first_name.titleize %>!</h1>
 
 <div class='edit-user'><%= link_to "Edit info", edit_user_path, :method => :get %> </div><br><br>
 
@@ -12,7 +12,7 @@
     <% if !@user.plaid_id %>
       <h3 class='card-text'>Click to Connect Your Bank Account</h3>
     <% else %>
-      <p class='card-text'><%= @user.first_name %> has already connected an account.</p>
+      <p class='card-text'><%= @user.first_name.titleize %> has already connected an account.</p>
       <% end %>
     </div>
     <p class='card-text'>Thank you for all that you do.</p>
@@ -33,14 +33,14 @@
     </div>
     <div class="card-copy card-text" id='round-up'>
         <% if @user.transactions %>
-          <p>Thanks, <%= @user.first_name %>! You will be donating: $<span id="donation-amount" ><%= '%.2f' % @user.bucket %></span> to <%= @user.current_charity_name || 'somewhere great...' %></p>
+          <p>Thanks, <%= @user.first_name.titleize %>! You will be donating: $<span id="donation-amount" ><%= '%.2f' % @user.bucket %></span> to <%= @user.current_charity_name || 'somewhere great...' %></p>
         <% end %>
         <% if @user.plaid_id != nil %>
           <%= form_tag(users_charity_pause_path, method: "put", id: 'pause-form') do %>
-            <%= submit_tag("Pause Donations") %>
+            <%= submit_tag("Pause Donations", class: "style-btn") %>
           <% end %>
         <% else %>
-          <button class='linkButton'>Connect Bank Account</button>
+          <button class='style-btn'>Connect Bank Account</button>
         <% end %>
     </div>
   </div>
@@ -50,22 +50,20 @@
       <%= image_tag('giving-hand.jpeg', size: '200') %>
     </div>
     <div class="card-header">
-      <h3 class='card-text'><%= @user.first_name %>'s Charity Choice</h3>
+<h3 class='card-text'><%= @user.first_name.titleize %>'s Charity Choice</h3>
     </div>
     <div class="card-copy card-text">
         <% if @user.current_charity_name %>
-          <p><%= @user.first_name %>'s Current Charity is: <%= @user.current_charity_name %></p>
+          <%= link_to @user.current_charity_name, charity_path(@user.current_charity_ein), :method => :get %>
         <% else %>
-          <p><%= @user.first_name %> does not have a charity selected.</p>
+          <p><%= @user.first_name.titleize %> does not have a charity selected.</p>
+          <%= link_to "Find a Charity", charities_path, :method => :get %>
+
         <% end %>
     </div>
   </div>
 </div>
-  <div class="charity-search-form">
-    <%= form_tag(charities_path, method: "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
-    <% end %> <br>
-  </div>
+
 <div class="donation-history-button">
   <a href="/users/<%= @user.id %>/history">
     <button class='style-btn'>
