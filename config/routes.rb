@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
   root "application#index"
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :charities, only: [:index, :show]
   resources :users, only: [:new, :create, :show, :edit, :update] do
     member do
       get 'history' => 'users#donation_history'
@@ -10,9 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :sessions, only: [:new, :create, :destroy]
-
-  resources :charities, only: [:index, :show]
+  get '/about' => 'application#about'
 
   post 'charities/search/:keyword', to: 'charities#search', :as => "charities_search"
 
