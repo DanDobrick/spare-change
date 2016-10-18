@@ -1,17 +1,8 @@
-  <div id="charities-container">
-      <% if @charities %>
-      <%= render partial: "show", locals: {charities: @charities} %>
-      <% else %>
-      <h2>Enter keyword or charity name below to search </h2>
-      <%= render '/charities/search'%><bR>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="breadcrumb">
-    <a href="javascript:void(0)">One</a>
-    <a href="javascript:void(0)">Two</a>
-    <a href="javascript:void(0)">Three</a>
-    <a href="javascript:void(0)">Four</a>
-    <a href="javascript:void(0)">Five</a>
-  </div>
+<div id="charities-container">
+     <% if @charities %>
+     <%= render partial: "show", locals: {charities: @charities} %>
+     <% else %>
+     <h2>Enter keyword or charity name below to search </h2>
+     <%= render '/charities/search'%><bR>
+     <% end %>
+ </div>
