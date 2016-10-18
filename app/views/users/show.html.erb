@@ -37,10 +37,10 @@
         <% end %>
         <% if current_user.plaid_id != nil %>
           <%= form_tag(users_charity_pause_path, method: "put", id: 'pause-form') do %>
-            <%= submit_tag("Pause Donations") %>
+            <%= submit_tag("Pause Donations", class: "style-btn") %>
           <% end %>
         <% else %>
-          <button class='linkButton'>Connect Bank Account</button>
+          <button class='style-btn'>Connect Bank Account</button>
         <% end %>
     </div>
   </div>
@@ -54,18 +54,15 @@
     </div>
     <div class="card-copy card-text">
         <% if current_user.current_charity_name %>
-          <p><%= current_user.first_name.titleize %>'s Current Charity is: <%= current_user.current_charity_name %></p>
+          <%= link_to current_user.current_charity_name, charity_path(current_user.current_charity_ein), :method => :get %>
         <% else %>
           <p><%= current_user.first_name.titleize %> does not have a charity selected.</p>
+          <%= link_to "Find a Charity", charities_path, :method => :get %>
         <% end %>
     </div>
   </div>
 </div>
-  <div class="charity-search-form">
-    <%= form_tag(charities_path, method: "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: 'Enter search term...' %>
-    <% end %> <br>
-  </div>
+
 <div class="donation-history-button">
   <a href="/users/<%= current_user.id %>/history">
     <button class='style-btn'>
