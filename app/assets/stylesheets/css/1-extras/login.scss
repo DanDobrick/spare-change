@@ -3,13 +3,21 @@
   text-align: center;
   @include media(50em) {
     text-align: left;
+  color: white;
+  padding-top: 75px;
   }
-  background: red;
+  background: none;
+  font-color: white;
   margin: auto;
+
 }
 
 .login form{
   width: 80%;
-  margin: auto; 
+  margin: auto;
   padding-bottom: 2em;
+}
+
+h1 {
+  margin: auto;
 }

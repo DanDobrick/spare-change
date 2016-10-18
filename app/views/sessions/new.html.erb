@@ -1,9 +1,10 @@
   <div class="login">
-    <h1>Login</h1>
       <% if @errors %>
         <%= render '/errors' %>
       <% end %>
       <%= form_tag(sessions_path, method: "post") do %>
+        <h1>Login</h1>
+        <br>
         <p>
           <%= label_tag(:email, "Email") %>
           <%= text_field_tag :email %>
