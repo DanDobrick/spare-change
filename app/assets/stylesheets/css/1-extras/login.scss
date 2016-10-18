@@ -1,0 +1,15 @@
+.login {
+  max-width: 50em;
+  text-align: center;
+  @include media(50em) {
+    text-align: left;
+  }
+  background: red;
+  margin: auto;
+}
+
+.login form{
+  width: 80%;
+  margin: auto; 
+  padding-bottom: 2em;
+}

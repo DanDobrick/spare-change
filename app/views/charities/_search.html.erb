@@ -1,5 +1,5 @@
 <%= form_tag(charities_path, method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search", :name => nil %>
+  <%#= label_tag(:q, "Charity Search:") %>
+  <%= text_field_tag :search, params[:search], class: 'search-bar search-entry', placeholder: 'Enter a Charity'%>
+  <%#= submit_tag "Charity Search", :name => nil, class: 'search-form'%>
 <% end %>

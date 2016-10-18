@@ -31,6 +31,7 @@ class User < ActiveRecord::Base
         if transaction.amount > 0
           rounded_amount = transaction.amount.ceil - transaction.amount
           self.bucket += rounded_amount
+          self.cap_donation
           self.rounded_transactions << transaction.id
         end
       end
@@ -66,4 +67,12 @@ class User < ActiveRecord::Base
     self.bucket = 0.0
     self.save
   end
+
+  def cap_donation
+    if self.max_donation
+     if self.bucket > self.max_donation
+       self.bucket = self.max_donation
+     end
+   end
+ end
 end
