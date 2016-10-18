@@ -118,4 +118,28 @@
 
 .donation-history-button {
   text-align: center;
+  margin: auto;
+}
+
+.style-btn {
+  @include button(#a8551e);
+}
+
+#user-bucket {
+  position: relative;
+}
+
+.user-bucket-img {
+  position: relative;
+  float: left;
+  width: 100%;  
+}
+
+#bucket-text {
+  position: absolute;
+  max-width: 100%;
+  color: #a8551e;
+  font-weight: bolder;
+  font-size: 3em;
+  text-align: center;
 }
