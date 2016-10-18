@@ -8,23 +8,35 @@
   $dark-gray: #333 !default;
   $medium-screen: 40em !default;
   $base-font-color: $dark-gray !default;
+  $base-font: 'titillium';
+  $base-font-size: 1.2em;
   $tab-border-color: $base-border-color;
   $tab-border: 1px solid $tab-border-color;
   $tab-border-radius: $base-border-radius;
   $tab-content-background: lighten($tab-border-color, 10%);
   $tab-active-color: $tab-content-background;
   $tab-inactive-color: $base-background-color;
-  $vertical-tabs-height: em(300);
+  $vertical-tabs-height: em(400);
   $vertical-tab-mode: $medium-screen;
+  $container-margin: 2em;
+  $container-top-margin: 4em;
+  $li-horizontal-margin: 1.3em;
 
   @include clearfix;
   border: $tab-border;
   border-radius: $tab-border-radius;
   margin-bottom: $base-spacing;
   overflow: hidden;
+  margin: $container-margin;
+  margin-top: $container-top-margin;
+  font-family: $base-font;
+  font-size: $base-font-size;
 
   li {
-    list-style: none;
+    padding: 0.5em;
+    margin-left: $li-horizontal-margin;
+    margin-right: $li-horizontal-margin;
+    list-style-type: decimal;
   }
 
   a {
