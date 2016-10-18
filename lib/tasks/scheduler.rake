@@ -8,6 +8,7 @@ task :process_donations => :environment do
       Donation.new(user_id: user.id, current_charity_ein: user.current_charity_ein, user_bucket: user.empty_bucket)
     end
     pending_donations = Donation.find_by(pending: true) || []
+    pending_donations = [pending_donations] if pending_donations.class != Array
     pending_donations += new_donations
     pending_donations.each do |donation|
       if donation.user.account_balance >= donation.user_bucket

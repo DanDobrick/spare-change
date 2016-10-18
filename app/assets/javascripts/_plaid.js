@@ -1,4 +1,4 @@
-$(document).on('ready', function(){
+function createLinkHandler(){
   var linkHandler = Plaid.create({
     selectAccount: true,
     env: 'tartan',
@@ -13,7 +13,7 @@ $(document).on('ready', function(){
         method: 'POST',
         data: {public_token: public_token, metadata: metadata}
       }).done(function(response){
-
+        location.reload();
       })
     },
     onExit: function() {
@@ -25,8 +25,12 @@ $(document).on('ready', function(){
       })
     }
   });
+  return linkHandler
+}
 
+$(document).on('ready', function(){
   $('.linkButton').on('click', function() {
-    linkHandler.open();
+    var handler = createLinkHandler()
+    handler.open();
   });
 });
