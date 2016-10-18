@@ -32,6 +32,6 @@
           <%= submit_tag("Make this My Charity", id: "charity_button") %>
         <% end %>
 
-        <p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>">GuideStar Rating</a>
+        <p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>" id="guidestar">GuideStar Rating</a>
       </div>
     </div>
