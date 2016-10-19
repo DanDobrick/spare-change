@@ -650,12 +650,7 @@ header.navigation {
 
 .edit-user {
   text-align: center;
-  max-width: 30%;
-  margin: auto;
-  padding: .5em;
-  background: #e6e6e6;
-  font-family: 'ormont';
-  border-radius: 5px; }
+  margin: auto; }
 
 .cards {
   display: flex;
@@ -766,19 +761,53 @@ header.navigation {
   font-size: 3em;
   text-align: center; }
 
-.login {
+.user-forms {
   max-width: 50em;
   text-align: center;
-  background: red;
+  background: none;
+  font-color: white;
   margin: auto; }
   @media screen and (min-width: 50em) {
-    .login {
-      text-align: left; } }
+    .user-forms {
+      text-align: left;
+      color: white;
+      padding-top: 75px; } }
 
-.login form {
+.user-forms form {
   width: 80%;
   margin: auto;
-  padding-bottom: 2em; }
+  padding: 2em; }
+
+#user-forms-h1 {
+  margin: auto;
+  font-size: 30px; }
+
+.user-forms-btn {
+  background-color: #e0ebeb;
+  background-image: -webkit-linear-gradient(top, #e0ebeb 0%, #a8b9ca 50%, #8aa0bb 50%, #91a5bd 100%);
+  background-image: linear-gradient(to bottom,#e0ebeb 0%, #a8b9ca 50%, #8aa0bb 50%, #91a5bd 100%);
+  border: 1px solid #6b7c9a;
+  border-bottom: 1px solid #626c71;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 0 0 #fffff7;
+  color: #333333;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #ebf5f5; }
+  .user-forms-btn:hover:not(:disabled) {
+    background-color: #d3dcd9;
+    background-image: -webkit-linear-gradient(top, #d3dcd9 0%, #9eadb8 50%, #8396a9 50%, #8a9bac 100%);
+    background-image: linear-gradient(to bottom,#d3dcd9 0%, #9eadb8 50%, #8396a9 50%, #8a9bac 100%);
+    cursor: pointer; }
+  .user-forms-btn:active:not(:disabled), .user-forms-btn:focus:not(:disabled) {
+    box-shadow: inset 0 0 20px 0 #717771; }
+  .user-forms-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; }
 
 .vertical-tabs-container {
   border: 1px solid #ddd;
