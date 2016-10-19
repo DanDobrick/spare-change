@@ -44,8 +44,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: current_user.try(:id))
     @user.update_attributes(user_params)
-    @user.update_bucket
-    @user.save
+    @user.cap_donation
 
     render :edit
   end
