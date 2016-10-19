@@ -838,7 +838,7 @@ header.navigation {
         background-color: #fff;
         display: inline;
         float: left;
-        height: 25em;
+        height: 31.25em;
         width: 20%; } }
   @media screen and (min-width: 600px) {
     .vertical-tabs-container .vertical-tab {
@@ -862,7 +862,7 @@ header.navigation {
       outline: none; }
     @media screen and (min-width: 600px) {
       .vertical-tabs-container .vertical-tab-content-container {
-        height: 25em;
+        height: 31.25em;
         width: 80%;
         background-color: #f7f7f7;
         display: inline-block; } }
