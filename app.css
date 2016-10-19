@@ -578,6 +578,12 @@ header.navigation {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.facebook {
+  display: inline-block; }
+
+.fb-frame {
+  padding-top: 11.5px; }
+
 .cards {
   display: flex;
   flex-wrap: wrap;

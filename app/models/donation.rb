@@ -9,7 +9,8 @@ class Donation < ActiveRecord::Base
                     metadata:{
                       'Charity EIN' => self.user.current_charity_ein,
                       'Charity name' => self.user.current_charity_name,
-                      'Donor full name' => self.user.full_name,
+                      'Donor first name' => self.user.first_name,
+                      'Donor last name' => self.user.last_name,
                       'Donor email' => self.user.email,
                       'anonymous' => 'yes'
                              },
