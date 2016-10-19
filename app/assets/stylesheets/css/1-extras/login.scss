@@ -1,4 +1,4 @@
-.login {
+.user-forms {
   max-width: 50em;
   text-align: center;
   @include media(50em) {
@@ -12,17 +12,17 @@
 
 }
 
-.login form{
+.user-forms form{
   width: 80%;
   margin: auto;
   padding: 2em;
 }
 
-#form-h1 {
+#user-forms-h1 {
   margin: auto;
   font-size: 30px;
 }
 
-.form-btn {
+.user-forms-btn {
   @include button(shiny, #e0ebeb);
 }

@@ -190,7 +190,8 @@ hr {
   margin: 1.5em 0; }
 
 body {
-  background-image: image-url("coins-912278_1920.jpg"); }
+  background-image: image-url("coins-912278_1920.jpg");
+}
 
 .title {
   text-align: center;
