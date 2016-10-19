@@ -308,7 +308,8 @@ ul.top-five {
 
 .query-show {
   background-color: white;
-  padding: 1em; }
+  padding: 1em;
+  border-bottom: solid #e6e6e6 1px; }
   .query-show:hover {
     background-color: #e6e6e6; }
 

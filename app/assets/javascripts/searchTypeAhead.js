@@ -39,8 +39,8 @@ $(document).on('ready', function(){
     async: 'true',
     source: charities,
     limit: 10,
-    templates:{ notFound: function(query){return '<div class= query-show>' + query.query + ' Not Found</div>'},
-              pending: function(query){return '<div class= query-show>Searching for: ' + query.query +'</div>'},
+    templates:{ notFound: function(query){return '<div class= query-show>"' + query.query + '" does not match any charity name</div>'},
+              pending: function(query){return '<div class= query-show>Searching for: "' + query.query +'"</div>'},
               suggestion: function(query){return suggestionHTML(query)}
             }
   }).bind('typeahead:select', function(ev, suggestion) {
