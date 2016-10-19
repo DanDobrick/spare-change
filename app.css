@@ -309,6 +309,8 @@ ul.top-five {
 .query-show {
   background-color: white;
   padding: 1em; }
+  .query-show:hover {
+    background-color: #e6e6e6; }
 
 header.navigation {
   background-color: #333;

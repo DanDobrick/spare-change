@@ -137,4 +137,9 @@ ul.top-five{
 .query-show{
   background-color: white;
   padding: 1em;
+
+  &:hover{
+    background-color: lighten(grey, 40%);
+  }
+
 }
