@@ -15,7 +15,7 @@
   <% end %>
     <h1 class="flex-title box-title">
     <% if current_user %>
-      <p><div class='box-title'>View <%= current_user.first_name %>'s Profile</div></p>
+      <p><div class='box-title'>View <%= current_user.first_name.capitalize %>'s Profile</div></p>
     <% else %>
       <p>Join Today!</p>
     <% end %>
