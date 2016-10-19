@@ -25,7 +25,7 @@ function suggestionHTML(query){
   var ein = query[1]
   var name = query[0]
   var url = '/charities/' + ein
-  return '<div class= query-show><a href='+ url +'>'+ titleize(name.toLowerCase()) +'</a></div>'
+  return '<a href='+ url+'><div class= query-show>'+ titleize(name.toLowerCase()) +'</div></a>'
 }
 
 $(document).on('ready', function(){
