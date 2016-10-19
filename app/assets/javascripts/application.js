@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require _plaid
 //= require pauseAccount
+//= require_tree ../../../vendor/assets/javascripts/typeahead.js
 //= require_tree .
