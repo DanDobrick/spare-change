@@ -809,6 +809,9 @@ header.navigation {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.reg-link {
+  color: white; }
+
 .vertical-tabs-container {
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -927,6 +930,12 @@ header.navigation {
   .donation-columns:last-child {
     margin-right: 0; }
 
+#no-donations {
+  padding-top: 25px;
+  font-size: 2em;
+  color: #e0ebeb;
+  text-shadow: 3px 3px black; }
+
 .outer-charities {
   max-width: 1200px;
   margin-left: auto;
@@ -987,6 +996,11 @@ a:hover, a:visited {
   #charity_button:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
+
+#search-help-text {
+  padding-top: 25px;
+  font-size: 2em;
+  color: #e0ebeb; }
 
 @font-face {
   font-family: 'Vonique';
