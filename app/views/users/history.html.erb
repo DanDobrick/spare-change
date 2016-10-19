@@ -1,7 +1,7 @@
 <section class='donation-history'>
   <h1 class='donation-title'>Donation History</h1>
   <% if @donations == [] %>
-    It looks like you have not made a donation yet! Donations are processed at the end of the month, so come back on <%= Date.today.at_end_of_month.strftime('%x')%> to see your donations here.
+    <p id='no-donations'>It looks like you have not made a donation yet! Donations are processed at the end of the month, so come back on <%= Date.today.at_end_of_month.strftime('%x')%> to see your donations here.</p>
   <% else %>
     <div class='dontation-outer'><ul>
       <% @donations.each do |donation| %>

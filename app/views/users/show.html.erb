@@ -33,7 +33,7 @@
     <div class="card-image">
       <section id='user-bucket'>
         <%=image_tag('jar-of-coins.jpeg', size: '200', class: 'user-bucket-img') %>
-        <p id='bucket-text'>$<%= @user.bucket %></p>
+        <p id='bucket-text'>$<%= '%.2f' % @user.bucket %></p>
       </section>
 
       <h1><%= @user.bucket %></h1>
@@ -49,7 +49,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <a href="/charities"><div class="card">
     <div class="card-image">
       <%= image_tag('giving-hand.jpeg', size: '200') %>
     </div>
@@ -66,7 +66,7 @@
         <% end %>
     </div>
   </div>
-</div>
+</div></a>
 
 
 <div class="donation-history-button">
@@ -75,11 +75,12 @@
       Edit Information
     </button>
   </a>
-
+<% if @user.donations.where(pending: false) != [] %>
   <a href="/users/<%= @user.id %>/history">
     <button class='style-btn'>
       Donation History
     </button>
   </a>
+<% end %>
 </div> <br><br>
 

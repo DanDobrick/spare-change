@@ -1,6 +1,8 @@
 $(document).on('ready', function(){
   $(".js-vertical-tab-content").hide();
-  $(".js-vertical-tab-content:first").show();
+  $(".js-vertical-tab-content:eq(1)").show();
+  $(".js-vertical-tab").removeClass("is-active");
+  $(".js-vertical-tab[rel^='tab2']").addClass("is-active");
 
   /* if in tab mode */
   $(".js-vertical-tab").click(function(event) {
