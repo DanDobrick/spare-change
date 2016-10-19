@@ -1,6 +1,6 @@
 <div id="charities-container">
      <% if @charities %>
-     <%= render partial: "show", locals: {charities: @charities} %>
+     <%= render partial: "charshow", locals: {charities: @charities} %>
      <% else %>
      <h2 id='search-help-text'>Enter keyword or charity name below to search:</h2>
      <%= render '/charities/search'%><bR>

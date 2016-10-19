@@ -1,5 +1,8 @@
-  <div class="cards">
-    <div class="card">
+<div class="modal">
+  <div class="cards modal-fade-screen">
+    <div id="charity_name" class="card modal-inner">
+      <span class="modal-close" for="modal-1">x</span>
+
       <div class="card-image">
         <% images = ['jar-of-coins.jpg', 'giving-hand.jpg', 'real-coins.jpg'] %>
         <%= image_tag(images.sample) %>
@@ -32,3 +35,4 @@
         <p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(@charity['ein']) %>" id="guidestar">GuideStar Rating</a>
       </div>
     </div>
+</div>
