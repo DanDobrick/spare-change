@@ -192,14 +192,31 @@ hr {
 body {
   background-image: url("coins-912278_1920.jpg"); }
 
-.title {
+#logo-title {
+  margin: auto;
   text-align: center;
-  margin: 1.3em;
-  padding: .5em;
-  background: #e6e6e6;
-  font-family: 'ormont';
-  border-radius: 5px; }
+  padding: 55px; }
 
+.title {
+  margin: auto;
+  font-family: 'pokey';
+  border-radius: 5px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  display: inline-block;
+  animation-name: dropHeader;
+  animation: dropHeader linear 1.7s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%; }
+
+@keyframes dropHeader {
+  0% {
+    opacity: 0;
+    transform: rotateY(-200deg); }
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg); } }
 .box-title {
   font-family: 'ormont'; }
 
@@ -288,6 +305,10 @@ body {
 
 ul.top-five {
   list-style-type: none; }
+
+.query-show {
+  background-color: white;
+  padding: 1em; }
 
 header.navigation {
   background-color: #333;
@@ -897,6 +918,10 @@ header.navigation {
       .vertical-tabs-container .vertical-tab-accordion-heading {
         display: none; } }
 
+.position {
+  font-size: 10px;
+  display: inline; }
+
 .donation-history {
   color: #a8551e;
   text-align: center;
@@ -1011,5 +1036,8 @@ a:hover, a:visited {
 @font-face {
   font-family: 'titillium';
   src: url("/assets/TitilliumWeb-Light.ttf"); }
+@font-face {
+  font-family: 'pokey';
+  src: url("/assets/DJB Pokey Dots.ttf"); }
 
 /*# sourceMappingURL=app.css.map */
