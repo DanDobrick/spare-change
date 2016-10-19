@@ -28,3 +28,9 @@ a:hover, a:visited {
   @include button(#a8551e);
   font-size: 13px;
 }
+
+#search-help-text {
+  padding-top: 25px;
+  font-size: 2em;
+  color: #e0ebeb;
+}
