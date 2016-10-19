@@ -2,7 +2,7 @@
      <% if @charities %>
      <%= render partial: "show", locals: {charities: @charities} %>
      <% else %>
-     <h2>Enter keyword or charity name below to search </h2>
+     <h2 id='search-help-text'>Enter keyword or charity name below to search:</h2>
      <%= render '/charities/search'%><bR>
      <% end %>
  </div>
