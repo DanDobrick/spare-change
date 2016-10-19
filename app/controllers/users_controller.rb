@@ -28,10 +28,6 @@ class UsersController < ApplicationController
       else
         render :show
       end
-      # respond_to do |format|
-      #   format.html {render :show}
-      #   format.js {}
-      # end
     else
       redirect_to new_session_path
     end
@@ -49,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: current_user.try(:id))
     @user.update_attributes(user_params)
 
-    redirect_to user_path(@user)
+    render :edit
   end
 
   # this is a custom update just to update the charity. so in future if we are updating user information, it can be completely separate from the update method.
@@ -87,7 +83,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:password, :email, :first_name, :last_name)
+    params.require(:user).permit(:password, :email, :first_name, :last_name, :max_donation)
   end
 
 

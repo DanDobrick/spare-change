@@ -21,7 +21,7 @@ function createLinkHandler(){
         url: window.location.href,
         method: 'GET',
       }).done(function(response){
-        $('#donation-amount').text(response.bucket)
+        $('#donation-amount').text(response.bucket.toFixed(2))
       })
     }
   });

@@ -33,7 +33,7 @@
     <div class="card-image">
       <section id='user-bucket'>
         <%=image_tag('jar-of-coins.jpeg', size: '200', class: 'user-bucket-img') %>
-        <p id='bucket-text'>$<%= @user.bucket %></p>
+        <p id='bucket-text'>$<%= '%.2f' % @user.bucket %></p>
       </section>
 
       <h1><%= @user.bucket %></h1>
