@@ -75,11 +75,12 @@
       Edit Information
     </button>
   </a>
-
+<% if @user.donations.where(pending: false) != [] %>
   <a href="/users/<%= @user.id %>/history">
     <button class='style-btn'>
       Donation History
     </button>
   </a>
+<% end %>
 </div> <br><br>
 
