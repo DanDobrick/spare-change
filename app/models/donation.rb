@@ -7,9 +7,9 @@ class Donation < ActiveRecord::Base
                     customer: self.user.stripe_account,
                     description: "Thank you for donating to #{self.user.current_charity_name}(EIN: #{self.current_charity_ein})!\n\nThis is a charitable donation made through Make My Donation a 501(c)(3) charitable organization operating a donor-advised fund, and is subject to all their Terms and Conditions. All donations are final and non-refundable.",
                     metadata:{
-                      'firstName' => self.user.first_name,
-                      'lastName' => self.user.last_name,
-                      'emailAddress' => self.user.email,
+                      'firstName' => '-',
+                      'lastName' => '-',
+                      'emailAddress' => '-',
                       'EIN' => self.user.current_charity_ein,
                       'charityName' => self.user.current_charity_name,
                       'anonymous' => 'yes'
