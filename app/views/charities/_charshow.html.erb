@@ -3,34 +3,32 @@
     <% if @charities != [] %>
       <% @charities.each do |charity| %>
         <li class="charity-item">
-          <div class='charity-li '>
-            <p><%= charity['charityName'] %></p>
-
+            <h4><%= charity['charityName'].titleize %></h4> 
               <div class="modal">
                 <label for="<%= charity['ein'] %>">
                   <div class="modal-trigger">View Details</div>
-                </label>
-                <input class="modal-state" class="modal" id="<%= charity['ein'] %>" type="checkbox" />
-                <div class="modal-fade-screen">
-                  <div class="modal-inner">
-                    <div class="modal-close" for="<%= charity['ein'] %>"></div>
-                    <%= render partial: "show", locals: {charity: charity} %>
+                  </label>
+                  <input class="modal-state" class="modal" id="<%= charity['ein'] %>" type="checkbox" />
+                  <div class="modal-fade-screen">
+                    <div class="modal-inner">
+                      <div class="modal-close" for="<%= charity['ein'] %>"></div>
+                      <%= render partial: "show", locals: {charity: charity} %>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <% if logged_in? %>
-                <%= form_tag(users_charity_update_path, method: "put") do %>
-                  <%= hidden_field_tag "charity_ein", charity['ein'] %>
-                  <%= hidden_field_tag "charity_name", charity['charityName'] %>
-                  <%= submit_tag("Make this My Charity", id: "charity_button") %>
-                <% end %>
-              <% end %>
-      <% end %>
-    <% else %>
-      <p>Sorry, charity not found.</p>
-    <% end %>
-            </div>
+                  <% if logged_in? %>
+                    <%= form_tag(users_charity_update_path, method: "put") do %>
+                      <%= hidden_field_tag "charity_ein", charity['ein'] %>
+                      <%= hidden_field_tag "charity_name", charity['charityName'] %>
+                      <%= submit_tag("Make this My Charity", id: "charity_button", class: 'make-charity') %>
+                    <% end %>
+                  <% end %>
+                  <% end %>
+                <% else %>
+                    <p>Sorry, charity not found.</p>
+                  <% end %>
+              </div>
           </li>
   </ul>
 </div>

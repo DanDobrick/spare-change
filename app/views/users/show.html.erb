@@ -47,7 +47,8 @@
     </div>
   </div>
 
- <div class="card">
+<div class="modal">
+ <div class="card modal-trigger">
     <div class="card-image">
       <%= image_tag('giving-hand.jpeg', size: '200') %>
     </div>
@@ -58,7 +59,6 @@
         <% if @user.current_charity_name %>
 
           <p><%= @user.current_charity_name.titleize %></p>
-          <div class="modal">
             <label for="<%= @user.current_charity_ein %>">
               <div class="modal-trigger">View Details</div>
             </label>

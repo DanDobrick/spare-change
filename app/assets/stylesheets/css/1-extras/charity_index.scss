@@ -1,16 +1,42 @@
 .outer-charities {
   @include outer-container;
   padding-top: 10px;
-}
+  width: 100%;
+  margin: auto;
 
-.charity-li {
-  @include span-columns(6);
-  margin: 10px;
+  li {
+  margin: 1em;
   border: 1px, solid, black;
   border-radius: 5px;
   text-align: center;
-  background: #e0ebeb;
+  background: rgba(224, 235, 235, .7);
+  font-weight: bolder;
+  color: black;
+  font-size: 1.2em;
+  width: 40em;
+
+    h4{
+      margin-bottom: 0;
+    }
+
+    .modal-trigger{
+      margin: 0;
+    }
+
+    .make-charity{
+      margin-bottom: 1em;
+    }
+
+  }
+
 }
+
+ul{
+  width: 50em;
+  margin: auto;
+}
+
+
 
 #charity_name {
   font-size: 20px;
