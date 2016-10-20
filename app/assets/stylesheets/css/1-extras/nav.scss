@@ -143,7 +143,6 @@ header.navigation {
 
   li.more.nav-link {
     padding-right: 0;
-
     @include media($horizontal-bar-mode) {
       padding-right: $navigation-submenu-padding;
     }
@@ -357,7 +356,12 @@ header.navigation {
   display: inline-block;
 }
 
+nav-link {
+  margin-top: 500px;  
+}
+
 .fb-frame {
-  padding-top: 11.5px;
+  padding-top: 20px;
+  float: right;
 }
 
