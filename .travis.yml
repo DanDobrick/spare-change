@@ -13,4 +13,3 @@ deploy:
   app: spare-change
   on:
     repo: DanDobrick/spare-change
-  run: 'rake db:setup'
