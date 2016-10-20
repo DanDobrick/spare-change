@@ -190,7 +190,8 @@ hr {
   margin: 1.5em 0; }
 
 body {
-  background-image: url("coins-912278_1920.jpg"); }
+  background-image: url("coins-912278_1920.jpg");
+  background-attachment: fixed; }
 
 #logo-title {
   margin: auto;
@@ -308,7 +309,10 @@ ul.top-five {
 
 .query-show {
   background-color: white;
-  padding: 1em; }
+  padding: 1em;
+  border-bottom: solid #e6e6e6 1px; }
+  .query-show:hover {
+    background-color: #e6e6e6; }
 
 header.navigation {
   background-color: #333;
@@ -373,8 +377,9 @@ header.navigation {
     line-height: 60px;
     overflow: hidden;
     padding-left: 0.8em;
-    font-family: 'Vonique';
+    font-family: 'titillium';
     text-align: right;
+    font-size: 1.2em;
     width: 100%;
     z-index: 9999; }
     @media screen and (min-width: 900px) {
@@ -575,6 +580,16 @@ header.navigation {
     cursor: not-allowed;
     opacity: 0.5; }
 
+.facebook {
+  display: inline-block; }
+
+nav-link {
+  margin-top: 500px; }
+
+.fb-frame {
+  padding-top: 20px;
+  float: right; }
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -660,6 +675,106 @@ header.navigation {
 
 #guidestar:hover {
   color: #e58f4e; }
+
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+.modal .modal-state {
+  display: none; }
+.modal .modal-trigger {
+  padding: 0.8em 1em; }
+.modal .modal-fade-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  transition: opacity 0.25s ease;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (min-width: 900px) {
+    .modal .modal-fade-screen {
+      padding-top: 10em; } }
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+.modal .modal-close {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  cursor: pointer; }
+  .modal .modal-close::after, .modal .modal-close::before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: "";
+    display: block;
+    margin: -3px 0 0 -1px;
+    transform: rotate(45deg); }
+  .modal .modal-close:hover::after, .modal .modal-close:hover::before {
+    background: #c4c4c4; }
+  .modal .modal-close::before {
+    transform: rotate(-45deg); }
+.modal .modal-inner {
+  background: #fff;
+  border-radius: 3px;
+  margin: auto;
+  margin-top: 0;
+  max-height: 95%;
+  overflow: auto;
+  padding: 1.5em;
+  position: relative;
+  transition: opacity 0.25s ease;
+  width: 50%; }
+  .modal .modal-inner h1 {
+    color: #333;
+    text-align: left;
+    text-transform: capitalize; }
+  .modal .modal-inner p {
+    color: #333;
+    line-height: 1.5; }
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em; }
+  .modal .modal-inner .modal-content {
+    color: #333; }
+    @media screen and (min-width: 600px) {
+      .modal .modal-inner .modal-content {
+        columns: 2 8em; } }
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+.modal-open {
+  overflow: hidden; }
 
 #welcome {
   text-align: center;
@@ -787,7 +902,8 @@ header.navigation {
   text-align: center;
   background: none;
   font-color: white;
-  margin: auto; }
+  margin: auto;
+  font-size: 1.2em; }
   @media screen and (min-width: 50em) {
     .user-forms {
       text-align: left;
@@ -965,24 +1081,33 @@ header.navigation {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 10px; }
+  padding-top: 10px;
+  width: 100%;
+  margin: auto; }
   .outer-charities::after {
     clear: both;
     content: "";
     display: block; }
+  .outer-charities li {
+    margin: 1em;
+    border: 1px, solid, black;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(224, 235, 235, 0.7);
+    font-weight: bolder;
+    color: black;
+    font-size: 1.2em;
+    width: 40em; }
+    .outer-charities li h4 {
+      margin-bottom: 0; }
+    .outer-charities li .modal-trigger {
+      margin: 0; }
+    .outer-charities li .make-charity {
+      margin-bottom: 1em; }
 
-.charity-li {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%;
-  margin: 10px;
-  border: 1px, solid, black;
-  border-radius: 5px;
-  text-align: center;
-  background: #e0ebeb; }
-  .charity-li:last-child {
-    margin-right: 0; }
+ul {
+  width: 50em;
+  margin: auto; }
 
 #charity_name {
   font-size: 20px; }

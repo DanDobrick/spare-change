@@ -1,5 +1,7 @@
 body{
-  background-image: url('coins-912278_1920.jpg')
+  background-image: url('coins-912278_1920.jpg');
+
+  background-attachment: fixed;
 }
 
 #logo-title {
@@ -137,4 +139,10 @@ ul.top-five{
 .query-show{
   background-color: white;
   padding: 1em;
+  border-bottom: solid lighten(grey, 40%) 1px;
+
+  &:hover{
+    background-color: lighten(grey, 40%);
+  }
+
 }

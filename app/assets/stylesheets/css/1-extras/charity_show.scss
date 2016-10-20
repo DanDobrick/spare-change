@@ -196,17 +196,7 @@
     padding: $modal-padding / 2;
     position: relative;
     transition: opacity 0.25s ease;
-    width: 95%;
-
-    @include media($medium-screen) {
-      max-height: 70%;
-      padding: $modal-padding;
-      width: 60%;
-    }
-
-    @include media($large-screen) {
-      width: 50%;
-    }
+    width: 50%;
 
     h1 {
       color: $base-font-color;
