@@ -190,7 +190,8 @@ hr {
   margin: 1.5em 0; }
 
 body {
-  background-image: url("coins-912278_1920.jpg"); }
+  background-image: url("coins-912278_1920.jpg");
+  background-attachment: fixed; }
 
 #logo-title {
   margin: auto;
@@ -308,7 +309,10 @@ ul.top-five {
 
 .query-show {
   background-color: white;
-  padding: 1em; }
+  padding: 1em;
+  border-bottom: solid #e6e6e6 1px; }
+  .query-show:hover {
+    background-color: #e6e6e6; }
 
 header.navigation {
   background-color: #333;
@@ -574,6 +578,12 @@ header.navigation {
   .search-form:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
+
+.facebook {
+  display: inline-block; }
+
+.fb-frame {
+  padding-top: 11.5px; }
 
 .cards {
   display: flex;
