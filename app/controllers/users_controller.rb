@@ -19,10 +19,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: current_user.try(:id))
-    @max = @user.cap_donation
+
+    ein = @user.current_charity_ein
+      url = "data.orghunter.com/v1/charitysearch?user_key=#{ENV['CHARITY_TOKEN']}&ein=#{ein}"
+      encoded_url = URI.encode(url)
+      response = HTTParty.get('http://'"#{encoded_url}")
+      @charity = response['data'][0]
 
     if logged_in? && @user.id == session[:user_id]
       @user.update_bucket
+      @user.save
       if request.xhr?
         render json: @user
       else
@@ -44,6 +50,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(id: current_user.try(:id))
     @user.update_attributes(user_params)
+    @user.cap_donation
 
     render :edit
   end

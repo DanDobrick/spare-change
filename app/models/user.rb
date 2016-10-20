@@ -70,9 +70,10 @@ class User < ActiveRecord::Base
 
   def cap_donation
     if self.max_donation
-     if self.bucket > self.max_donation
-       self.bucket = self.max_donation
-     end
-   end
+      self.max_donation = nil if self.max_donation == 0
+      if self.bucket > self.max_donation
+        self.bucket = self.max_donation
+      end
+    end
  end
 end
