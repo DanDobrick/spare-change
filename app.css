@@ -745,15 +745,7 @@ nav-link {
   padding: 1.5em;
   position: relative;
   transition: opacity 0.25s ease;
-  width: 95%; }
-  @media screen and (min-width: 600px) {
-    .modal .modal-inner {
-      max-height: 70%;
-      padding: 3em;
-      width: 60%; } }
-  @media screen and (min-width: 900px) {
-    .modal .modal-inner {
-      width: 50%; } }
+  width: 50%; }
   .modal .modal-inner h1 {
     color: #333;
     text-align: left;
