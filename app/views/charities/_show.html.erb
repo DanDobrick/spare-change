@@ -1,25 +1,36 @@
-<div class='outer-charities'>
-  <ul id="charities-list">
-    <% if @charities != [] %>
-      <% @charities.each do |charity| %>
-          <li class="charity-item">
-        <div class='charity-li'>
-            <%= link_to charity['charityName'].titleize, charity_path(charity['ein']), :method => :get, id: "charity_name"%>
-            <% if logged_in? %>
-              <%= form_tag(users_charity_update_path, method: "put") do %>
-                <%= hidden_field_tag "charity_ein", charity['ein'] %>
-                <%= hidden_field_tag "charity_name", charity['charityName'] %>
-                <%= submit_tag("Make this My Charity", id: "charity_button") %>
-              <% end %>
-            <% end %>
-
-            <p><a href="http://<%= charity['website'] %>"><%= charity['website'] %></a>
-            <p> <%= charity['missionStatement']%></p>
-        <% end %>
-        <% else %>
-          <p>Sorry, charity not found.</p>
-        <% end %>
+<div class="cards">
+  <div class="card">
+    <div class="card-image">
+      <% images = ['jar-of-coins.jpg', 'giving-hand.jpg', 'real-coins.jpg'] %>
+      <%= image_tag(images.sample) %>
+      <!-- <img src="https://philanthropytimes.files.wordpress.com/2014/10/charity_donation_study.jpg" alt="" style="width:500px;height:200px;" alt="logo"> -->
     </div>
-      </li>
-  </ul>
-</div>
+    <div class="card-header">
+        <%= charity['charityName'] %>
+    </div>
+    <div class="card-copy">
+      <% if charity['website'] != "" %>
+        <p><a href="http://<%= charity['website'] %>"><%= charity['website'] %></a>
+      <% else %>
+        <p>Website: Information Not Provided</p>
+      <% end %>
+
+      <% if charity['missionStatement'] != "" %>
+        <p> <%= charity['missionStatement']%></p>
+      <% else %>
+        <p>Mission Statement: Information Not Provided</p>
+      <% end %>
+
+      <% if current_user.current_charity_ein != charity['ein'] %>
+        <%= form_tag(users_charity_update_path, method: "put") do %>
+          <%= hidden_field_tag "charity_ein", charity['ein'] %>
+          <%= hidden_field_tag "charity_name", charity['charityName'] %>
+          <%= submit_tag("Make this My Charity", id: "charity_button") %>
+        <% end %>
+      <% end %>
+
+      <p><a href="https://www.guidestar.org/profile/<%= guidestar_ein(charity['ein']) %>" id="guidestar">GuideStar Rating</a>
+    </div>
+  </div>
+
+
