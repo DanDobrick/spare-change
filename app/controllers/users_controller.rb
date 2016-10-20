@@ -21,6 +21,12 @@ class UsersController < ApplicationController
     @user = User.find_by(id: current_user.try(:id))
     @max = @user.cap_donation
 
+    ein = @user.current_charity_ein
+      url = "data.orghunter.com/v1/charitysearch?user_key=#{ENV['CHARITY_TOKEN']}&ein=#{ein}"
+      encoded_url = URI.encode(url)
+      response = HTTParty.get('http://'"#{encoded_url}")
+      @charity = response['data'][0]
+
     if logged_in? && @user.id == session[:user_id]
       @user.update_bucket
       if request.xhr?

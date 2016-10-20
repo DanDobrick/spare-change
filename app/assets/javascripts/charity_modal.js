@@ -1,5 +1,5 @@
 $(function() {
-  $("#{modal(@charity['ein'])}").on("change", function() {
+  $(".modal").on("change", function() {
     if ($(this).is(":checked")) {
       $("body").addClass("modal-open");
     } else {

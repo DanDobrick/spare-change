@@ -3,10 +3,8 @@
 <div class="edit-user">
 </div>
 
-
 <div class="cards">
   <div class="card">
-
     <div class="card-image">
       <%= image_tag('real-coins.jpeg') %>
     </div>
@@ -49,24 +47,38 @@
     </div>
   </div>
 
-  <a href="/charities"><div class="card">
+ <div class="card">
     <div class="card-image">
       <%= image_tag('giving-hand.jpeg', size: '200') %>
     </div>
     <div class="card-header">
-<h3 class='card-text'><%= @user.first_name.titleize %>'s Charity Choice</h3>
+      <h3 class='card-text'><%= @user.first_name.titleize %>'s Charity Choice</h3>
     </div>
     <div class="card-copy card-text">
         <% if @user.current_charity_name %>
-          <%= link_to @user.current_charity_name, charity_path(@user.current_charity_ein), :method => :get %>
+
+          <p><%= @user.current_charity_name.titleize %></p>
+          <div class="modal">
+            <label for="<%= @user.current_charity_ein %>">
+              <div class="modal-trigger">View Details</div>
+            </label>
+            <input class="modal-state" class="modal" id="<%= @user.current_charity_ein %>" type="checkbox" />
+            <div class="modal-fade-screen">
+              <div class="modal-inner">
+                <div class="modal-close" for="<%= @user.current_charity_ein %>"></div>
+                <%= render template: "charities/_show.html.erb", locals: {charity: @charity } %>
+              </div>
+            </div>
+          </div>
+
         <% else %>
           <p><%= @user.first_name.titleize %> does not have a charity selected.</p>
           <%= link_to "Find a Charity", charities_path, :method => :get %>
-
         <% end %>
+
     </div>
   </div>
-</div></a>
+</div>
 
 
 <div class="donation-history-button">
@@ -82,5 +94,6 @@
     </button>
   </a>
 <% end %>
-</div> <br><br>
+
+</div>
 
