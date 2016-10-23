@@ -8,12 +8,26 @@ A web-app to round up transactions to the nearest dollar and donate that money t
 - [Cy Weisman](https://github.com/cypweisman)
 - [Jake Fishbain](https://github.com/jakefishbain)
 
+##Screenshots
+![Home Page](/screenshots/home.png?raw=true "Home Page")
+![User Page](/screenshots/user.png?raw=true "User Page")
+![How It Works](/screenshots/howe.png?raw=true "How It Works")
+
+##How it works
+1. First you create an account on the site, using your first name, last name and email address.
+2. Using our secure bank login provided by PLAID and your financial institution, you authorize us to round up each transaction to the nearest dollar, we call this amount a "round-up"
+3. Utilizing our search powered by <a href="http://orghunter.com/">OrgHunter</a> you choose from over 2 million charities in the United States.
+4. Throughout the month, we round up the transactions you make and ear-mark that amount for the charity that you've chosen.
+5. At the end of the month, we debit the total of all the "round-ups" from your securely authorized account and, in partnership with <a href="http://makemydonation.org/">MakeMyDonation</a>, we send the donation amount to your charity
+6. On the first of the month, your 'round-ups' reset and you start earning donations all over again!
+
 ##Code Status
 [![Build Status](https://travis-ci.org/DanDobrick/spare-change.svg?branch=master)](https://travis-ci.org/DanDobrick/spare-change)
 
 ##Technologies used
 - Ruby on Rails
 - JavaScript
+- Typeahead.js
 - Plaid
 - Stripe
 - Make My Donation
