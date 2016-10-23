@@ -9,9 +9,12 @@ A web-app to round up transactions to the nearest dollar and donate that money t
 - [Jake Fishbain](https://github.com/jakefishbain)
 
 ##Screenshots
+###Home Page
 ![Home Page](/screenshots/home.png?raw=true "Home Page")
+###User Page
 ![User Page](/screenshots/user.png?raw=true "User Page")
-![How It Works](/screenshots/howe.png?raw=true "How It Works")
+###How it works
+![How It Works](/screenshots/how.png?raw=true "How It Works")
 
 ##How it works
 1. First you create an account on the site, using your first name, last name and email address.
