@@ -15,6 +15,10 @@ A web-app to round up transactions to the nearest dollar and donate that money t
 ![User Page](/screenshots/user.png?raw=true "User Page")
 ###How it works
 ![How It Works](/screenshots/how.png?raw=true "How It Works")
+###Choosing an Account
+![Choose Your Bank](/screenshots/choose-bank.png?raw=true "Choose Your Bank")
+###Connected Account
+![Connected Account](/screenshots/chase-connected.png?raw=true "Connected Account")
 
 ##How it works
 1. First you create an account on the site, using your first name, last name and email address.
@@ -30,8 +34,8 @@ A web-app to round up transactions to the nearest dollar and donate that money t
 ##Technologies used
 - Ruby on Rails
 - JavaScript
-- Typeahead.js
-- Plaid
-- Stripe
-- Make My Donation
-- Org Hunter
+- [Typeahead.js](https://twitter.github.io/typeahead.js/)
+- [Plaid](https://plaid.com/)
+- [Stripe](https://stripe.com/)
+- [Make My Donation](http://makemydonation.org/)
+- [Org Hunter](http://orghunter.com/)
